@@ -6,4 +6,8 @@
     <string name="action_settings">Settings</string>
     <string name="network_httpurl_get_content">Get Content</string>
     <string name="network_httpurl_get_picture">Get Picture</string>
+    <string name="network_httpurl_test_get">Get</string>
+    <string name="network_httpurl_test_post">Post</string>
+    <string name="network_httpurl_test_post_param">PostWithParam</string>
+    <string name="network_httpurl_test_post_json">PostWithJson</string>
 </resources>

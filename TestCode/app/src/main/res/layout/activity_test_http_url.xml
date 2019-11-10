@@ -6,12 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".network.TestHttpUrlActivity">
 
+    <TextView
+        android:id="@+id/txt_http_show_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/hello_world"/>
+
+    <ImageView
+        android:id="@+id/iv_http_show_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintLeft_toLeftOf="@id/btn_http_get_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_http_show_result"
+        android:src="@mipmap/ic_launcher"/>
+
     <Button
         android:id="@+id/btn_http_get_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_http_show_img"
         android:text="@string/network_httpurl_get_content" />
 
 
@@ -23,13 +39,38 @@
         app:layout_constraintTop_toBottomOf="@id/btn_http_get_content"
         android:text="@string/network_httpurl_get_picture" />
 
-    <ImageView
-        android:id="@+id/iv_http_show_img"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+    <Button
+        android:id="@+id/btn_http_test_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/btn_http_get_content"
         app:layout_constraintTop_toBottomOf="@id/btn_http_get_picture"
-        android:src="@mipmap/ic_launcher"/>
+        android:text="@string/network_httpurl_test_get" />
 
+    <Button
+        android:id="@+id/btn_http_test_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/btn_http_get_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_http_test_get"
+        android:text="@string/network_httpurl_test_post" />
+
+    <Button
+        android:id="@+id/btn_http_test_post_param"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/btn_http_get_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_http_test_post"
+        android:onClick="testPostParam"
+        android:text="@string/network_httpurl_test_post_param" />
+
+    <Button
+        android:id="@+id/btn_http_test_post_json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/btn_http_get_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_http_test_post_param"
+        android:onClick="testPostJson"
+        android:text="@string/network_httpurl_test_post_json" />
 
 </android.support.constraint.ConstraintLayout>
