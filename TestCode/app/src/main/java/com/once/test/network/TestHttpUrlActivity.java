@@ -85,11 +85,11 @@ public class TestHttpUrlActivity extends Activity {
         }
     };
 
-    private void testPostParam(View view){
+    public void testPostParam(View view){
         testPostWithParam();
     }
 
-    private void testPostJson(View view){
+    public void testPostJson(View view){
         new Thread(new Runnable() {
             @Override
             public void run() {
