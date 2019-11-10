@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import android.app.Activity;
 
+import com.once.test.network.TestHttpUrlActivity;
 import com.once.test.provider.TestContactProviderActivity;
 
 
@@ -27,6 +28,9 @@ public class TestItemClass {
 	public void loadItem(){
 		itemNames.add("TestContact");
 		itemClasses.add(TestContactProviderActivity.class);
+
+		itemNames.add("TestHttpUrlConnection");
+		itemClasses.add(TestHttpUrlActivity.class);
 	}
 	
 

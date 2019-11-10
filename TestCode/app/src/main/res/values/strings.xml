@@ -4,5 +4,6 @@
     <string name="app_name">Sample</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+    <string name="network_httpurl_get_content">Get Content</string>
+    <string name="network_httpurl_get_picture">Get Picture</string>
 </resources>
