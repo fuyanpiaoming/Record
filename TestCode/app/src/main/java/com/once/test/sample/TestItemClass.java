@@ -6,6 +6,7 @@ import java.util.HashMap;
 import android.app.Activity;
 
 import com.once.test.network.TestHttpUrlActivity;
+import com.once.test.network.TestOkhttpActivity;
 import com.once.test.network.TestVolley;
 import com.once.test.provider.TestContactProviderActivity;
 
@@ -35,6 +36,10 @@ public class TestItemClass {
 
 		itemNames.add("TestVolley");
 		itemClasses.add(TestVolley.class);
+
+		itemNames.add("TestOkHttp3");
+		itemClasses.add(TestOkhttpActivity.class);
+
 	}
 	
 
