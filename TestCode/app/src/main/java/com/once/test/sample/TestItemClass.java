@@ -9,6 +9,8 @@ import com.once.test.network.TestHttpUrlActivity;
 import com.once.test.network.TestOkhttpActivity;
 import com.once.test.network.TestVolley;
 import com.once.test.provider.TestContactProviderActivity;
+import com.once.test.testretrofit.TestRetrofitActivity;
+import com.once.test.utils.TestOtherActivity;
 
 
 public class TestItemClass {
@@ -39,6 +41,12 @@ public class TestItemClass {
 
 		itemNames.add("TestOkHttp3");
 		itemClasses.add(TestOkhttpActivity.class);
+
+		itemNames.add("TestOther");
+		itemClasses.add(TestOtherActivity.class);
+
+		itemNames.add("TestRetrofit");
+		itemClasses.add(TestRetrofitActivity.class);
 
 	}
 	

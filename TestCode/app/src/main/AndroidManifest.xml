@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.once.test">
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -12,8 +13,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".testretrofit.TestRetrofitActivity"></activity>
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+
         <activity android:name=".sample.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,10 +24,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".provider.TestContactProviderActivity" />
         <activity android:name=".network.TestHttpUrlActivity" />
         <activity android:name=".network.TestVolley" />
         <activity android:name=".network.TestOkhttpActivity" />
+        <activity android:name=".utils.TestOtherActivity"/>
+        <activity android:name=".testretrofit.TestRetrofitActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
     </application>
 
 </manifest>

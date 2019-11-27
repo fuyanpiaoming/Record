@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".testretrofit.TestRetrofitActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/retrfit_show_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <!--android:textAllCaps="false" 表示text文本中的字体是否要大写，默认为true，即大写-->
+        <Button
+            android:id="@+id/retrfit_get_sync_btn"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="@string/retrofit_get_sync" />
+
+        <Button
+            android:id="@+id/retrfit_get_async_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:text="@string/retrofit_get_async" />
+        <Button
+            android:id="@+id/retrfit_get_withapi_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:text="@string/retrofit_get_withapi" />
+    </LinearLayout>
+
+</RelativeLayout>

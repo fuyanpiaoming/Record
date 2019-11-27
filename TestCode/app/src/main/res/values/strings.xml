@@ -10,4 +10,7 @@
     <string name="network_httpurl_test_post">Post</string>
     <string name="network_httpurl_test_post_param">PostWithParam</string>
     <string name="network_httpurl_test_post_json">PostWithJson</string>
+    <string name="retrofit_get_sync">GetSync</string>
+    <string name="retrofit_get_async">GetAsync</string>
+    <string name="retrofit_get_withapi">GetWithApi</string>
 </resources>
