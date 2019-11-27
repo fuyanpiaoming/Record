@@ -5,6 +5,6 @@ import retrofit2.http.GET;
 
 public interface ApiService {
 
-    @GET("/skyee_robot/settings/server/get_all_url")
+    @GET("/haha/server")
     Call<UrlBean> getServerUrl();
 }
