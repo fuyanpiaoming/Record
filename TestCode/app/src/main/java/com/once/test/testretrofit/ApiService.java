@@ -5,6 +5,6 @@ import retrofit2.http.GET;
 
 public interface ApiService {
 
-    @GET("/haha/server")
+    @GET("haha/service/url")
     Call<UrlBean> getServerUrl();
 }
