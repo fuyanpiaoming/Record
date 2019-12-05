@@ -15,8 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
-
+        <activity android:name=".eventbus.TestEventBus2Activity"></activity>
         <activity android:name=".sample.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,14 +23,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".provider.TestContactProviderActivity" />
         <activity android:name=".network.TestHttpUrlActivity" />
         <activity android:name=".network.TestVolley" />
         <activity android:name=".network.TestOkhttpActivity" />
-        <activity android:name=".utils.TestOtherActivity"/>
-        <activity android:name=".testretrofit.TestRetrofitActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name=".utils.TestOtherActivity" />
+        <activity
+            android:name=".testretrofit.TestRetrofitActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".eventbus.TestEventBusActivity"
+            android:label="@string/title_activity_test_event_bus"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>

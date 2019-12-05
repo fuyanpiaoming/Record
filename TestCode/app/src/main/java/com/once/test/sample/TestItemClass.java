@@ -5,6 +5,8 @@ import java.util.HashMap;
 
 import android.app.Activity;
 
+import com.once.test.eventbus.TestEventBus2Activity;
+import com.once.test.eventbus.TestEventBusActivity;
 import com.once.test.network.TestHttpUrlActivity;
 import com.once.test.network.TestOkhttpActivity;
 import com.once.test.network.TestVolley;
@@ -47,6 +49,12 @@ public class TestItemClass {
 
 		itemNames.add("TestRetrofit");
 		itemClasses.add(TestRetrofitActivity.class);
+
+		itemNames.add("TestEventBus");
+		itemClasses.add(TestEventBusActivity.class);
+
+		itemNames.add("TestEventBus2");
+		itemClasses.add(TestEventBus2Activity.class);
 
 	}
 	
