@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".eventbus.TestEventBus2Activity"></activity>
+        <activity android:name=".designmode.SingleInstanceModeActivity"></activity>
+        <activity android:name=".eventbus.TestEventBus2Activity" />
         <activity android:name=".sample.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
