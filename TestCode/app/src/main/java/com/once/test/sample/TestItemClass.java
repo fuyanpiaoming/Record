@@ -11,6 +11,7 @@ import com.once.test.network.TestHttpUrlActivity;
 import com.once.test.network.TestOkhttpActivity;
 import com.once.test.network.TestVolley;
 import com.once.test.provider.TestContactProviderActivity;
+import com.once.test.testhread.TestThreadPoolActivity;
 import com.once.test.testretrofit.TestRetrofitActivity;
 import com.once.test.utils.TestOtherActivity;
 
@@ -56,6 +57,8 @@ public class TestItemClass {
 		itemNames.add("TestEventBus2");
 		itemClasses.add(TestEventBus2Activity.class);
 
+		itemNames.add("TestThreadPool");
+		itemClasses.add(TestThreadPoolActivity.class);
 	}
 	
 
