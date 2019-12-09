@@ -15,7 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".testhread.TestThreadPoolActivity"></activity>
+        <service android:name="org.eclipse.paho.android.service.MqttService"/>
+        <activity
+            android:name=".network.TestMqttActivity"
+            android:label="@string/title_activity_mqtt"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".testhread.TestThreadPoolActivity" />
         <activity android:name=".designmode.SingleInstanceModeActivity" />
         <activity android:name=".eventbus.TestEventBus2Activity" />
         <activity android:name=".sample.MainActivity">
