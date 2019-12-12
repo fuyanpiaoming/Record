@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_scale"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="缩放" />
+
+        <Button
+            android:id="@+id/btn_rotate"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="旋转" />
+
+        <Button
+            android:id="@+id/btn_translate"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="平移" />
+
+        <Button
+            android:id="@+id/btn_skew"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="倾斜" />
+
+        <Button
+            android:id="@+id/btn_x_mirror"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="X轴镜像" />
+
+        <Button
+            android:id="@+id/btn_y_mirror"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Y轴镜像" />
+
+    </LinearLayout>
+    <!-- 原始图片 -->
+    <ImageView
+        android:id="@+id/iv_base"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
+    <!-- 处理之后的图片 -->
+    <ImageView
+        android:id="@+id/iv_after"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
+
+</LinearLayout>
