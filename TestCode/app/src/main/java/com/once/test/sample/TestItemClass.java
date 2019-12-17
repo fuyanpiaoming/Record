@@ -9,6 +9,7 @@ import com.once.test.eventbus.TestEventBus2Activity;
 import com.once.test.eventbus.TestEventBusActivity;
 import com.once.test.math.TestCanvasActivity;
 import com.once.test.math.TestMatrixActivity;
+import com.once.test.math.TestXfmodeActivity;
 import com.once.test.network.TestHttpUrlActivity;
 import com.once.test.network.TestOkhttpActivity;
 import com.once.test.network.TestVolley;
@@ -63,6 +64,9 @@ public class TestItemClass {
 
 		itemNames.add("TestCanvas");
 		itemClasses.add(TestCanvasActivity.class);
+
+		itemNames.add("TestXfmode");
+		itemClasses.add(TestXfmodeActivity.class);
 	}
 	
 
