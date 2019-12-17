@@ -13,9 +13,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:hardwareAccelerated="false"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".math.TestMatrixActivity"></activity>
+        <activity android:name=".math.TestCanvasActivity"></activity>
+        <activity android:name=".math.TestMatrixActivity" />
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
 

@@ -94,15 +94,9 @@ public class TestMatrixActivity extends Activity {
         Matrix matrix = new Matrix();
         matrix.setScale(x, y);
         canvas.drawBitmap(baseBitmap, matrix, paint);
-        iv_base.setImageBitmap(afterBitmap);
+        iv_after.setImageBitmap(afterBitmap);
     }
-
-
-    /**
-     * x轴镜像
-     */
     protected void bitmapXMirror() {
-        // 由于要将图片放大，所以要依据放大的尺寸又一次创建Bitmap
         Bitmap afterBitmap = Bitmap.createBitmap(
                 baseBitmap.getWidth() ,
                 baseBitmap.getHeight() , baseBitmap.getConfig());

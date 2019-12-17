@@ -7,6 +7,7 @@ import android.app.Activity;
 
 import com.once.test.eventbus.TestEventBus2Activity;
 import com.once.test.eventbus.TestEventBusActivity;
+import com.once.test.math.TestCanvasActivity;
 import com.once.test.math.TestMatrixActivity;
 import com.once.test.network.TestHttpUrlActivity;
 import com.once.test.network.TestOkhttpActivity;
@@ -59,6 +60,9 @@ public class TestItemClass {
 
 		itemNames.add("TestMatrix");
 		itemClasses.add(TestMatrixActivity.class);
+
+		itemNames.add("TestCanvas");
+		itemClasses.add(TestCanvasActivity.class);
 	}
 	
 
