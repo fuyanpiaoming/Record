@@ -4,25 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".PostActivity">
 
-    <TextView
-        android:id="@+id/tv_show_post_message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_main"
+        android:id="@+id/btn_post"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="去发送消息"
-        app:layout_constraintTop_toBottomOf="@id/tv_show_post_message"
+        android:text="Post"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
+    <Button
+        android:id="@+id/btn_post_sticky"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PostSticky"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_post"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
