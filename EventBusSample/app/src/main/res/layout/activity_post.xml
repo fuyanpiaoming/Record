@@ -8,20 +8,45 @@
 
 
     <Button
-        android:id="@+id/btn_post"
+        android:id="@+id/btn_post_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Post"
+        android:text="PostMain"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
+    <Button
+        android:id="@+id/btn_post_posting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PostPosting"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_post_main"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/btn_post_async"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PostAsync"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_post_posting"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_post_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PostBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_post_async"
+        tools:ignore="MissingConstraints" />
     <Button
         android:id="@+id/btn_post_sticky"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="PostSticky"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_post"
+        app:layout_constraintTop_toBottomOf="@id/btn_post_background"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
