@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RxjavaMergeActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_merge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Merge"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_merge_array"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MergeArray"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_concat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Concat"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_concat_array"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ConcatArray"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_concat_delay_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ConcatDelayError"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_merge_delay_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MergeDelayError"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_zip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Zip"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_combineLatest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CombineLatest"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_combineLatest_delayerror"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CombineLatestDelayError"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_reduce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reduce"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_collect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Collect"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_startwith"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="StartWith"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_startWithArray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="StartWithArray"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Count"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
