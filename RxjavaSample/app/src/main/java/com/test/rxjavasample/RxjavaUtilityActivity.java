@@ -8,6 +8,7 @@ import android.view.View;
 
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Notification;
 import io.reactivex.rxjava3.core.Observable;
@@ -15,6 +16,7 @@ import io.reactivex.rxjava3.core.ObservableEmitter;
 import io.reactivex.rxjava3.core.ObservableOnSubscribe;
 import io.reactivex.rxjava3.core.ObservableSource;
 import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.core.Scheduler;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.functions.Action;
 import io.reactivex.rxjava3.functions.BiPredicate;
@@ -22,6 +24,7 @@ import io.reactivex.rxjava3.functions.BooleanSupplier;
 import io.reactivex.rxjava3.functions.Consumer;
 import io.reactivex.rxjava3.functions.Function;
 import io.reactivex.rxjava3.functions.Predicate;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class RxjavaUtilityActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -40,6 +43,7 @@ public class RxjavaUtilityActivity extends AppCompatActivity implements View.OnC
         findViewById(R.id.btn_retry_when).setOnClickListener(this);
         findViewById(R.id.btn_repeat).setOnClickListener(this);
         findViewById(R.id.btn_repeat_when).setOnClickListener(this);
+        findViewById(R.id.btn_thread_change).setOnClickListener(this);
     }
 
     @Override
@@ -71,6 +75,9 @@ public class RxjavaUtilityActivity extends AppCompatActivity implements View.OnC
                 break;
             case R.id.btn_repeat_when:
                 repeatWhenOperation();
+                break;
+            case R.id.btn_thread_change:
+                threadOperation();
                 break;
         }
     }
@@ -290,7 +297,7 @@ public class RxjavaUtilityActivity extends AppCompatActivity implements View.OnC
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(@NonNull ObservableEmitter<Integer> emitter) throws Throwable {
-                Log.i(TAG,"[retryOperation]subscribe");
+                Log.i(TAG, "[retryOperation]subscribe");
                 emitter.onNext(1);
                 emitter.onNext(2);
                 emitter.onNext(3);
@@ -299,42 +306,42 @@ public class RxjavaUtilityActivity extends AppCompatActivity implements View.OnC
         }).retry(new Predicate<Throwable>() {//拦截错误后，判断是否需要重新发送请求
             @Override
             public boolean test(Throwable throwable) throws Throwable {
-                Log.i(TAG,"[retryOperation]retry test");
+                Log.i(TAG, "[retryOperation]retry test");
                 //返回false表示不重新重新发送数据并且调用观察者的onError结束
                 //返回true表示重新发送请求（若持续遇到错误，就持续重新发送）
                 return true;
             }
         }).subscribe(new Observer<Integer>() {
-                    @Override
-                    public void onSubscribe(@NonNull Disposable d) {
-                        Log.i(TAG,"[retryOperation]onSubscribe");
-                    }
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+                Log.i(TAG, "[retryOperation]onSubscribe");
+            }
 
-                    @Override
-                    public void onNext(@NonNull Integer integer) {
-                        Log.i(TAG,"[retryOperation]onNext");
-                    }
+            @Override
+            public void onNext(@NonNull Integer integer) {
+                Log.i(TAG, "[retryOperation]onNext");
+            }
 
-                    @Override
-                    public void onError(@NonNull Throwable e) {
-                        Log.i(TAG,"[retryOperation]onError");
-                    }
+            @Override
+            public void onError(@NonNull Throwable e) {
+                Log.i(TAG, "[retryOperation]onError");
+            }
 
-                    @Override
-                    public void onComplete() {
-                        Log.i(TAG,"[retryOperation]onComplete");
-                    }
-                });
+            @Override
+            public void onComplete() {
+                Log.i(TAG, "[retryOperation]onComplete");
+            }
+        });
     }
 
     /**
      * retry操作符：发生错误时，让被观察者重新发送事件
      */
-    private void retryOperation1(){
+    private void retryOperation1() {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
             public void subscribe(@NonNull ObservableEmitter<Integer> emitter) throws Throwable {
-                Log.i(TAG,"[retryOperation1]subscribe");
+                Log.i(TAG, "[retryOperation1]subscribe");
                 emitter.onNext(1);
                 emitter.onNext(2);
                 emitter.onNext(3);
@@ -343,7 +350,7 @@ public class RxjavaUtilityActivity extends AppCompatActivity implements View.OnC
         }).retry(new BiPredicate<Integer, Throwable>() {
             @Override
             public boolean test(@NonNull Integer integer, @NonNull Throwable throwable) throws Throwable {
-                Log.i(TAG,"[retryOperation1]test retry time:" + integer);
+                Log.i(TAG, "[retryOperation1]test retry time:" + integer);
                 //返回false表示不重新重新发送数据且调用观察者的onError结束
                 //返回true表示重新发送请求（若持续遇到错误，就持续重新发送）
                 return true;
@@ -351,22 +358,22 @@ public class RxjavaUtilityActivity extends AppCompatActivity implements View.OnC
         }).subscribe(new Observer<Integer>() {
             @Override
             public void onSubscribe(@NonNull Disposable d) {
-                Log.i(TAG,"[retryOperation1]onSubscribe");
+                Log.i(TAG, "[retryOperation1]onSubscribe");
             }
 
             @Override
             public void onNext(@NonNull Integer integer) {
-                Log.i(TAG,"[retryOperation1]onNext value=" + integer);
+                Log.i(TAG, "[retryOperation1]onNext value=" + integer);
             }
 
             @Override
             public void onError(@NonNull Throwable e) {
-                Log.i(TAG,"[retryOperation1]onError e:" + e.toString());
+                Log.i(TAG, "[retryOperation1]onError e:" + e.toString());
             }
 
             @Override
             public void onComplete() {
-                Log.i(TAG,"[retryOperation1]onComplete");
+                Log.i(TAG, "[retryOperation1]onComplete");
             }
         });
     }
@@ -374,11 +381,11 @@ public class RxjavaUtilityActivity extends AppCompatActivity implements View.OnC
     /**
      * retryUntil操作符：出现错误时，让被观察者重新发送数据
      */
-    private void retryUntilOperation(){
+    private void retryUntilOperation() {
         Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(@NonNull ObservableEmitter<String> emitter) throws Throwable {
-                Log.i(TAG,"[retryUntilOperation]subscribe");
+                Log.i(TAG, "[retryUntilOperation]subscribe");
                 emitter.onNext("a");
                 emitter.onNext("b");
                 emitter.onNext("c");
@@ -387,28 +394,28 @@ public class RxjavaUtilityActivity extends AppCompatActivity implements View.OnC
         }).retryUntil(new BooleanSupplier() {
             @Override
             public boolean getAsBoolean() throws Throwable {
-                Log.i(TAG,"[retryUntilOperation]retryUntil");
+                Log.i(TAG, "[retryUntilOperation]retryUntil");
                 return false;
             }
         }).subscribe(new Observer<String>() {
             @Override
             public void onSubscribe(@NonNull Disposable d) {
-                Log.i(TAG,"[retryUntilOperation]onSubscribe");
+                Log.i(TAG, "[retryUntilOperation]onSubscribe");
             }
 
             @Override
             public void onNext(@NonNull String s) {
-                Log.i(TAG,"[retryUntilOperation]onNext S=" + s);
+                Log.i(TAG, "[retryUntilOperation]onNext S=" + s);
             }
 
             @Override
             public void onError(@NonNull Throwable e) {
-                Log.i(TAG,"[retryUntilOperation]onError");
+                Log.i(TAG, "[retryUntilOperation]onError");
             }
 
             @Override
             public void onComplete() {
-                Log.i(TAG,"[retryUntilOperation]onComplete");
+                Log.i(TAG, "[retryUntilOperation]onComplete");
             }
         });
     }
@@ -416,11 +423,11 @@ public class RxjavaUtilityActivity extends AppCompatActivity implements View.OnC
     /**
      * retryWhen操作符：遇到错误时，将发生的错误传递给一个新的被观察者（Observable），并决定是否需要重新订阅原始被观察者且发送事件
      */
-    private void retryWhenOperation(){
+    private void retryWhenOperation() {
         Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(@NonNull ObservableEmitter<String> emitter) throws Throwable {
-                Log.i(TAG,"[retryWhenOperation]subscribe");
+                Log.i(TAG, "[retryWhenOperation]subscribe");
                 emitter.onNext("a");
                 emitter.onNext("b");
                 emitter.onNext("c");
@@ -429,7 +436,7 @@ public class RxjavaUtilityActivity extends AppCompatActivity implements View.OnC
         }).retryWhen(new Function<Observable<Throwable>, ObservableSource<?>>() {
             @Override
             public ObservableSource<?> apply(Observable<Throwable> throwableObservable) throws Throwable {
-                Log.i(TAG,"[retryWhenOperation]retryWhen apply1");
+                Log.i(TAG, "[retryWhenOperation]retryWhen apply1");
                 return throwableObservable.flatMap(new Function<Throwable, ObservableSource<?>>() {
                     @Override
                     public ObservableSource<?> apply(Throwable throwable) throws Throwable {
@@ -445,22 +452,22 @@ public class RxjavaUtilityActivity extends AppCompatActivity implements View.OnC
         }).subscribe(new Observer<String>() {
             @Override
             public void onSubscribe(@NonNull Disposable d) {
-                Log.i(TAG,"[retryWhenOperation]onSubscribe");
+                Log.i(TAG, "[retryWhenOperation]onSubscribe");
             }
 
             @Override
             public void onNext(@NonNull String s) {
-                Log.i(TAG,"[retryWhenOperation]onNext s=" + s);
+                Log.i(TAG, "[retryWhenOperation]onNext s=" + s);
             }
 
             @Override
             public void onError(@NonNull Throwable e) {
-                Log.i(TAG,"[retryWhenOperation]onError");
+                Log.i(TAG, "[retryWhenOperation]onError");
             }
 
             @Override
             public void onComplete() {
-                Log.i(TAG,"[retryWhenOperation]onComplete");
+                Log.i(TAG, "[retryWhenOperation]onComplete");
             }
         });
     }
@@ -468,13 +475,13 @@ public class RxjavaUtilityActivity extends AppCompatActivity implements View.OnC
     /**
      * repeat操作符：让被观察者重复发送事件
      */
-    private void repeatOperation(){
-        Observable.just("a","b","c")
+    private void repeatOperation() {
+        Observable.just("a", "b", "c")
                 .repeat()
                 .subscribe(new Consumer<String>() {
                     @Override
                     public void accept(String s) throws Throwable {
-                        Log.i(TAG,"[repeatOperation]accept s = " + s);
+                        Log.i(TAG, "[repeatOperation]accept s = " + s);
                     }
                 });
     }
@@ -482,25 +489,25 @@ public class RxjavaUtilityActivity extends AppCompatActivity implements View.OnC
     /**
      * repeatWhen操作符:被观察者有条件的重复发送事件
      */
-    private void repeatWhenOperation(){
-        Observable.just(1,2,3,4,5)
+    private void repeatWhenOperation() {
+        Observable.just(1, 2, 3, 4, 5)
                 .repeatWhen(new Function<Observable<Object>, ObservableSource<?>>() {
                     @Override
                     public ObservableSource<?> apply(Observable<Object> objectObservable) throws Throwable {
                         return objectObservable.flatMap(new Function<Object, ObservableSource<?>>() {
                             @Override
                             public ObservableSource<?> apply(Object o) throws Throwable {
-                                Log.i(TAG,"[repeatWhenOperation]repeatWhen apply");
+                                Log.i(TAG, "[repeatWhenOperation]repeatWhen apply");
                                 int i = 1;
-                                if ( i ==  1){
+                                if (i == 1) {
                                     //新的被观察者发送onComplete事件，表示不重新订阅原来的Observable且不发送数据
                                     return Observable.empty();
-                                }else if (i == 2){
+                                } else if (i == 2) {
                                     //新的被观察者发送onError事件，表示不重新订阅原来的Observable且不发送数据
                                     return Observable.error(new Throwable());
-                                }else{
+                                } else {
                                     //新的被观察者发送onNext事件，表示重新订阅原来的Observable并且发送数据
-                                    return Observable.just(1,2);
+                                    return Observable.just(1, 2);
                                 }
                             }
                         });
@@ -508,24 +515,72 @@ public class RxjavaUtilityActivity extends AppCompatActivity implements View.OnC
                 }).subscribe(new Observer<Integer>() {
             @Override
             public void onSubscribe(@NonNull Disposable d) {
-                Log.i(TAG,"[repeatWhenOperation]onSubscribe");
+                Log.i(TAG, "[repeatWhenOperation]onSubscribe");
             }
 
             @Override
             public void onNext(@NonNull Integer integer) {
-                Log.i(TAG,"[repeatWhenOperation]onNext");
+                Log.i(TAG, "[repeatWhenOperation]onNext");
             }
 
             @Override
             public void onError(@NonNull Throwable e) {
-                Log.i(TAG,"[repeatWhenOperation]onError");
+                Log.i(TAG, "[repeatWhenOperation]onError");
             }
 
             @Override
             public void onComplete() {
-                Log.i(TAG,"[repeatWhenOperation]onComplete");
+                Log.i(TAG, "[repeatWhenOperation]onComplete");
             }
         });
+    }
+
+    /**
+     * subscribeOn操作符：指定被观察者生产事件的线程
+     * observeOn操作符：指定观察者接收和处理事件的线程
+     * 1.若Observable.subscribeOn（）多次指定被观察者生产事件的线程，则只有第一次指定有效，其余的指定线程无效
+     * 2.若Observable.observeOn（）多次指定观察者 接收 & 响应事件的线程，则每次指定均有效，即每指定一次，就会进行一次线程的切换
+     *Schedulers.immediate()表示当前线程
+     * AndroidSchedulers.mainThread()表示ui，即主线程
+     * Schedulers.newThread()表示新创建的线程
+     * Schedulers.io()表示io线程
+     * Schedulers.computation()表示cpu计算线程
+     */
+    private void threadOperation() {
+        Observable.create(new ObservableOnSubscribe<Integer>() {
+            @Override
+            public void subscribe(@NonNull ObservableEmitter<Integer> emitter) throws Throwable {
+                Log.i(TAG, "[threadOperation]subscribe threadname=" + Thread.currentThread().getName());
+                emitter.onNext(1);
+                emitter.onNext(2);
+                emitter.onNext(3);
+                emitter.onComplete();
+            }
+
+        }).subscribeOn(Schedulers.newThread())//指定被观察者在一个新线程上生产事件并发送给观察者
+                .observeOn(AndroidSchedulers.mainThread())//指定观察者在主线程上接收并处理事件
+                .subscribe(new Observer<Integer>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        Log.i(TAG, "[threadOperation]onSubscribe threadname=" + Thread.currentThread().getName());
+                    }
+
+                    @Override
+                    public void onNext(@NonNull Integer integer) {
+                        Log.i(TAG,"[threadOperation]onNext value="+ integer);
+                        Log.i(TAG, "[threadOperation]onNext threadname=" + Thread.currentThread().getName());
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        Log.i(TAG, "[threadOperation]onError threadname=" + Thread.currentThread().getName());
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Log.i(TAG, "[threadOperation]onComplete threadname=" + Thread.currentThread().getName());
+                    }
+                });
     }
 
 

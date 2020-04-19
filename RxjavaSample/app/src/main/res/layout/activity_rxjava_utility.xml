@@ -78,6 +78,13 @@
                 android:text="repeatWhen操作符"
                 android:textAllCaps="false" />
 
+            <Button
+                android:id="@+id/btn_thread_change"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="线程切换"
+                android:textAllCaps="false" />
+
         </LinearLayout>
     </ScrollView>
 
