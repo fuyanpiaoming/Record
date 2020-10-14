@@ -16,10 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activity.TestSqlActivity"></activity>
         <activity
             android:name=".math.TestXfmodeActivity"
             android:label="@string/title_activity_test_xfmode"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".math.TestCanvasActivity" />
         <activity android:name=".math.TestMatrixActivity" />
 
