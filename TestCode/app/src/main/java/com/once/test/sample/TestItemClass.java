@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import android.app.Activity;
 
+import com.once.test.activity.TestSqlActivity;
 import com.once.test.eventbus.TestEventBus2Activity;
 import com.once.test.eventbus.TestEventBusActivity;
 import com.once.test.math.TestCanvasActivity;
@@ -14,6 +15,7 @@ import com.once.test.network.TestHttpUrlActivity;
 import com.once.test.network.TestOkhttpActivity;
 import com.once.test.network.TestVolley;
 import com.once.test.provider.TestContactProviderActivity;
+import com.once.test.store.TestSqlOpenHelper;
 import com.once.test.testhread.TestThreadPoolActivity;
 import com.once.test.testretrofit.TestRetrofitActivity;
 
@@ -67,6 +69,9 @@ public class TestItemClass {
 
 		itemNames.add("TestXfmode");
 		itemClasses.add(TestXfmodeActivity.class);
+
+		itemNames.add("SqlHelper");
+		itemClasses.add(TestSqlActivity.class);
 	}
 	
 
