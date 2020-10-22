@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import android.app.Activity;
 
+import com.once.test.activity.TestPermissionActivity;
 import com.once.test.activity.TestSqlActivity;
 import com.once.test.eventbus.TestEventBus2Activity;
 import com.once.test.eventbus.TestEventBusActivity;
@@ -72,6 +73,9 @@ public class TestItemClass {
 
 		itemNames.add("SqlHelper");
 		itemClasses.add(TestSqlActivity.class);
+
+		itemNames.add("Permission");
+		itemClasses.add(TestPermissionActivity.class);
 	}
 	
 
