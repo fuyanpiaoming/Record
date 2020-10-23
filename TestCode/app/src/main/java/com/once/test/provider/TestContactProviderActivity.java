@@ -124,12 +124,4 @@ public class TestContactProviderActivity extends Activity{
 		}
 		super.onActivityResult(requestCode, resultCode, data);
 	}
-	
-	
-	
-	
-	
-	
-	
-
 }

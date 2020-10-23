@@ -1,6 +1,6 @@
 package com.once.test.testretrofit;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,7 +14,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class TestRetrofitActivity extends AppCompatActivity {
+public class TestRetrofitActivity extends Activity {
 
     private final String TAG = "TestRetrofitActivity";
 

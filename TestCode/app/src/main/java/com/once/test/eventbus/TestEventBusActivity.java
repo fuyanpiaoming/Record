@@ -1,5 +1,6 @@
 package com.once.test.eventbus;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,7 +19,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-public class TestEventBusActivity extends AppCompatActivity {
+public class TestEventBusActivity extends Activity {
 
     private final String TAG = "TestEventBusTag";
 

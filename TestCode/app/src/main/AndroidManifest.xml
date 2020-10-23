@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activity.TestCustomProviderActivity"/>
 
+        <provider
+            android:name=".provider.CustomContentProvider"
+            android:authorities="com.once.test.provider"
+            android:enabled="true"
+            android:exported="true" />
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
 
@@ -39,13 +45,10 @@
         <activity android:name=".network.TestHttpUrlActivity" />
         <activity android:name=".network.TestVolley" />
         <activity android:name=".network.TestOkhttpActivity" />
-        <activity
-            android:name=".testretrofit.TestRetrofitActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".testretrofit.TestRetrofitActivity" />
         <activity
             android:name=".eventbus.TestEventBusActivity"
-            android:label="@string/title_activity_test_event_bus"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:label="@string/title_activity_test_event_bus" />
         <activity
             android:name=".math.TestXfmodeActivity"
             android:label="@string/title_activity_test_xfmode"
@@ -53,7 +56,7 @@
         <activity android:name=".math.TestCanvasActivity" />
         <activity android:name=".math.TestMatrixActivity" />
         <activity android:name=".activity.TestSqlActivity" />
-        <activity android:name=".activity.TestPermissionActivity"/>
+        <activity android:name=".activity.TestPermissionActivity" />
     </application>
 
 </manifest>
