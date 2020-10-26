@@ -40,6 +40,7 @@ public class CustomContentProvider extends ContentProvider {
         Log.i(TAG,"[delete]uri=" + uri);
         SQLiteDatabase sqLiteDatabase = mySqlOpenHelper.getWritableDatabase();
         int row = 0;
+        Log.i(TAG,"[delete]uri match item=" + uriMatcher.match(uri));
         switch (uriMatcher.match(uri)){
             case BOOK_DIR:
                 row = sqLiteDatabase.delete("Book",selection,selectionArgs);

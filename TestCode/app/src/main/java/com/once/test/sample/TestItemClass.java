@@ -7,6 +7,7 @@ import android.app.Activity;
 
 import com.once.test.activity.TestCustomProviderActivity;
 import com.once.test.activity.TestPermissionActivity;
+import com.once.test.activity.TestServiceActivity;
 import com.once.test.activity.TestSqlActivity;
 import com.once.test.eventbus.TestEventBus2Activity;
 import com.once.test.eventbus.TestEventBusActivity;
@@ -79,6 +80,9 @@ public class TestItemClass {
 
         itemNames.add("Provider");
         itemClasses.add(TestCustomProviderActivity.class);
+
+        itemNames.add("Service");
+        itemClasses.add(TestServiceActivity.class);
     }
 
 

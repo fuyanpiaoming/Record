@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.TestServiceActivity">
+
+    <Button
+        android:id="@+id/btn_start_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开启服务"/>
+
+    <Button
+        android:id="@+id/btn_stop_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关闭服务"/>
+
+    <Button
+        android:id="@+id/btn_bind_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="绑定服务"/>
+
+    <Button
+        android:id="@+id/btn_unbind_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="解绑服务"/>
+
+    <Button
+        android:id="@+id/btn_gen_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="生成数字"/>
+
+    <Button
+        android:id="@+id/btn_bind_messenger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="绑定Messenger服务"/>
+
+    <Button
+        android:id="@+id/btn_unbind_messenger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="解绑Messenger服务"/>
+
+    <Button
+        android:id="@+id/btn_say"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送消息给MessengerService"/>
+
+</LinearLayout>
