@@ -6,6 +6,7 @@ import java.util.HashMap;
 import android.app.Activity;
 
 import com.once.test.activity.TestCustomProviderActivity;
+import com.once.test.activity.TestNotificationActivity;
 import com.once.test.activity.TestPermissionActivity;
 import com.once.test.activity.TestServiceActivity;
 import com.once.test.activity.TestSqlActivity;
@@ -83,6 +84,10 @@ public class TestItemClass {
 
         itemNames.add("Service");
         itemClasses.add(TestServiceActivity.class);
+
+        itemNames.add("Notification");
+        itemClasses.add(TestNotificationActivity.class);
+
     }
 
 

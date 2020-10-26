@@ -17,8 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <receiver
+            android:name=".broadcast.MyReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
 
-
+        <activity android:name=".activity.TestNotificationActivity" />
         <activity
             android:name=".network.TestMqttActivity"
             android:label="@string/title_activity_mqtt"
@@ -64,11 +68,10 @@
         <service
             android:name=".service.MyIntentService"
             android:exported="false" />
-
         <service
             android:name=".service.MessengerService"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true" />
 
         <provider
             android:name=".provider.CustomContentProvider"
