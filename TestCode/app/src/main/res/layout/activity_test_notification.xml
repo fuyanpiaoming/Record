@@ -25,4 +25,34 @@
         android:layout_height="wrap_content"
         android:text="通知三"/>
 
+    <Button
+        android:id="@+id/btn_show4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="通知四"/>
+
+    <Button
+        android:id="@+id/btn_show5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="通知五"/>
+
+    <Button
+        android:id="@+id/btn_show6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="通知启动常规Activity"/>
+
+    <Button
+        android:id="@+id/btn_show7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="通知启动特殊Activity"/>
+
+    <Button
+        android:id="@+id/btn_show8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开Channel设置"/>
+
 </LinearLayout>

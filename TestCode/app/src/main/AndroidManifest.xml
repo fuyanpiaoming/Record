@@ -17,12 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <receiver
-            android:name=".broadcast.MyReceiver"
-            android:enabled="true"
-            android:exported="true"></receiver>
 
-        <activity android:name=".activity.TestNotificationActivity" />
         <activity
             android:name=".network.TestMqttActivity"
             android:label="@string/title_activity_mqtt"
@@ -55,6 +50,16 @@
         <activity android:name=".activity.TestPermissionActivity" />
         <activity android:name=".activity.TestServiceActivity" />
         <activity android:name=".activity.TestCustomProviderActivity" />
+        <activity
+            android:name=".activity.NotificationAckActivity"
+            android:launchMode="singleTask"
+            android:taskAffinity=""
+            android:excludeFromRecents="true"/>
+        <!--parentActivityName属性是否添加不会影响任务栈-->
+        <activity android:name=".activity.NotificationNormalAckActivity"
+            android:parentActivityName=".activity.TestNotificationActivity"/>
+
+        <activity android:name=".activity.TestNotificationActivity" />
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
         <service
@@ -78,6 +83,12 @@
             android:authorities="com.once.test.provider"
             android:enabled="true"
             android:exported="true" />
+
+        <receiver
+            android:name=".broadcast.MyReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
     </application>
 
 </manifest>
