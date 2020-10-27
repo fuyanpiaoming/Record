@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
         android:allowBackup="true"
@@ -17,6 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <service
+            android:name=".service.ForegroundService"
+            android:enabled="true"
+            android:exported="true"/>
 
         <activity
             android:name=".network.TestMqttActivity"
@@ -52,13 +57,12 @@
         <activity android:name=".activity.TestCustomProviderActivity" />
         <activity
             android:name=".activity.NotificationAckActivity"
+            android:excludeFromRecents="true"
             android:launchMode="singleTask"
-            android:taskAffinity=""
-            android:excludeFromRecents="true"/>
-        <!--parentActivityName属性是否添加不会影响任务栈-->
-        <activity android:name=".activity.NotificationNormalAckActivity"
-            android:parentActivityName=".activity.TestNotificationActivity"/>
-
+            android:taskAffinity="" /> <!-- parentActivityName属性是否添加不会影响任务栈 -->
+        <activity
+            android:name=".activity.NotificationNormalAckActivity"
+            android:parentActivityName=".activity.TestNotificationActivity" />
         <activity android:name=".activity.TestNotificationActivity" />
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
@@ -88,7 +92,6 @@
             android:name=".broadcast.MyReceiver"
             android:enabled="true"
             android:exported="true" />
-
     </application>
 
 </manifest>

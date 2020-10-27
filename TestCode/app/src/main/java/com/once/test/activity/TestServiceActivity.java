@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.once.test.R;
+import com.once.test.service.ForegroundService;
 import com.once.test.service.HelloService;
 import com.once.test.service.MessengerService;
 import com.once.test.service.MyService;
@@ -41,6 +42,9 @@ public class TestServiceActivity extends Activity {
         findViewById(R.id.btn_bind_messenger).setOnClickListener(onClickListener);
         findViewById(R.id.btn_unbind_messenger).setOnClickListener(onClickListener);
         findViewById(R.id.btn_say).setOnClickListener(onClickListener);
+
+        findViewById(R.id.btn_open_foreground_service).setOnClickListener(onClickListener);
+        findViewById(R.id.btn_close_foreground_service).setOnClickListener(onClickListener);
 
     }
 
@@ -82,6 +86,14 @@ public class TestServiceActivity extends Activity {
                     break;
                 case R.id.btn_say:
                     sayHello();
+                    break;
+                case R.id.btn_open_foreground_service:
+                    intent = new Intent(TestServiceActivity.this, ForegroundService.class);
+                    startService(intent);
+                    break;
+                case R.id.btn_close_foreground_service:
+                    intent = new Intent(TestServiceActivity.this, ForegroundService.class);
+                    stopService(intent);
                     break;
             }
         }

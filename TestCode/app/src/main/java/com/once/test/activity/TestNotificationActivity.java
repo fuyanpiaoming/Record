@@ -80,7 +80,7 @@ public class TestNotificationActivity extends Activity implements View.OnClickLi
 
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "test_code";
+            CharSequence name = "Hello";
             String describe = "this is a channel";
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel notificationChannel = new NotificationChannel("test", name, importance);
@@ -241,15 +241,18 @@ public class TestNotificationActivity extends Activity implements View.OnClickLi
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
     private void openChannelSetting(){
-        NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-        NotificationChannel notificationChannel = notificationManager.getNotificationChannel("test");
-        Intent intent = new Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS);
-        intent.putExtra(Settings.EXTRA_APP_PACKAGE,getPackageName());
-        Log.i(TAG,"[openChannelSetting]channel id=" + notificationChannel.getId());
-        intent.putExtra(Settings.EXTRA_CHANNEL_ID,notificationChannel.getId());
-        startActivity(intent);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+            NotificationChannel notificationChannel = notificationManager.getNotificationChannel("test");
+            Intent intent = new Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS);
+            intent.putExtra(Settings.EXTRA_APP_PACKAGE,getPackageName());
+            Log.i(TAG,"[openChannelSetting]channel id=" + notificationChannel.getId());
+            intent.putExtra(Settings.EXTRA_CHANNEL_ID,notificationChannel.getId());
+            startActivity(intent);
+        }
+
     }
     
 }
