@@ -16,4 +16,9 @@
     <string name="title_activity_test_event_bus">TestEventBusActivity</string>
     <string name="title_activity_mqtt">TestMqttActivity</string>
     <string name="title_activity_test_xfmode">TestXfmodeActivity</string>
+    <string name="call">Call</string>
+    <string name="favourite">Favourite</string>
+    <string name="setting">Setting</string>
+    <string name="share">Share</string>
+    <string name="data">Data</string>
 </resources>

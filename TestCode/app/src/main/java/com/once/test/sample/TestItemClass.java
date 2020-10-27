@@ -6,6 +6,7 @@ import java.util.HashMap;
 import android.app.Activity;
 
 import com.once.test.activity.TestCustomProviderActivity;
+import com.once.test.activity.TestDrawLayoutActivity;
 import com.once.test.activity.TestNotificationActivity;
 import com.once.test.activity.TestPermissionActivity;
 import com.once.test.activity.TestServiceActivity;
@@ -92,6 +93,9 @@ public class TestItemClass {
 
         itemNames.add("Toolbar");
         itemClasses.add(TestToolbarActivity.class);
+
+        itemNames.add("DrawLayout");
+        itemClasses.add(TestDrawLayoutActivity.class);
     }
 
 
