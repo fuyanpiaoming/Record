@@ -10,6 +10,7 @@ import com.once.test.activity.TestNotificationActivity;
 import com.once.test.activity.TestPermissionActivity;
 import com.once.test.activity.TestServiceActivity;
 import com.once.test.activity.TestSqlActivity;
+import com.once.test.activity.TestToolbarActivity;
 import com.once.test.eventbus.TestEventBus2Activity;
 import com.once.test.eventbus.TestEventBusActivity;
 import com.once.test.math.TestCanvasActivity;
@@ -88,6 +89,9 @@ public class TestItemClass {
         itemNames.add("Notification");
         itemClasses.add(TestNotificationActivity.class);
 
+
+        itemNames.add("Toolbar");
+        itemClasses.add(TestToolbarActivity.class);
     }
 
 

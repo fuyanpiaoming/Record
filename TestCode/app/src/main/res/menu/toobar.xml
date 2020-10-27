@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_setting"
+        android:icon="@drawable/ic_setting"
+        android:title="设置"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_data"
+        android:icon="@drawable/ic_data"
+        android:title="数据"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_share"
+        android:icon="@drawable/ic_share"
+        android:title="分享"
+        app:showAsAction="never" />
+</menu>
