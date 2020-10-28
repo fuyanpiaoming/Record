@@ -1,23 +1,35 @@
 package com.once.test.activity;
 
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.once.test.R;
+import com.once.test.adapter.PersonAdapter;
+import com.once.test.mode.Person;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TestDrawLayoutActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
+
+    private List<Person> personList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +37,8 @@ public class TestDrawLayoutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test_draw_layout);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        initPerson();
 
         drawerLayout = findViewById(R.id.draw_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -43,6 +57,41 @@ public class TestDrawLayoutActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        FloatingActionButton floatingActionButton = findViewById(R.id.float_action_btn);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Snackbar.make(v,"Click float action button",Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(v,"click float btn",Snackbar.LENGTH_SHORT).setAction("cancel", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(TestDrawLayoutActivity.this,"click cancel btn",Toast.LENGTH_SHORT).show();
+                    }
+                }).show();
+            }
+        });
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
+        recyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView.setAdapter(new PersonAdapter(personList));
+    }
+
+    private void initPerson(){
+        personList.clear();
+        personList.add(new Person("焰灵姬",R.drawable.q2));
+        personList.add(new Person("田言",R.drawable.q6));
+        personList.add(new Person("潮女妖",R.drawable.q7));
+        personList.add(new Person("潮女妖",R.drawable.q10));
+        personList.add(new Person("弄玉",R.drawable.q11));
+        personList.add(new Person("焱妃",R.drawable.q12));
+        personList.add(new Person("少司命",R.drawable.q16));
+        personList.add(new Person("雪女",R.drawable.q19));
+        personList.add(new Person("焰灵姬",R.drawable.q24));
+        personList.add(new Person("晓梦",R.drawable.q28));
+        personList.add(new Person("紫女",R.drawable.zi3));
+        personList.add(new Person("紫女",R.drawable.zi5));
     }
 
     @Override
