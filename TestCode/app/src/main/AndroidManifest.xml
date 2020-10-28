@@ -14,13 +14,14 @@
         android:hardwareAccelerated="false"
         android:icon="@drawable/app_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.TestCollapsingToolbarActivity"
+        <activity android:name=".activity.TestFragmentActivity"/>
+        <activity
+            android:name=".activity.TestCollapsingToolbarActivity"
             android:label="CollapsingToolbar"
-            android:theme="@style/ActivityTheme"/>
+            android:theme="@style/ActivityTheme" />
         <activity
             android:name=".activity.TestDrawLayoutActivity"
             android:label="DrawLayout"
