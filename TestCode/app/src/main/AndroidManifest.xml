@@ -18,9 +18,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.TestDrawLayoutActivity"
-            android:label="DrawLayout"
+        <activity android:name=".activity.TestCollapsingToolbarActivity"
+            android:label="CollapsingToolbar"
             android:theme="@style/ActivityTheme"/>
+        <activity
+            android:name=".activity.TestDrawLayoutActivity"
+            android:label="DrawLayout"
+            android:theme="@style/ActivityTheme" />
         <activity
             android:name=".activity.TestToolbarActivity"
             android:label="Hello"

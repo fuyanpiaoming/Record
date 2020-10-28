@@ -1,4 +1,14 @@
 <resources>
-    <color name="colorPrimary">#6495ED</color>
-    <color name="colorPrimaryDark">#4169E1</color>
+    <color name="colorPrimary">#4169E1</color>
+    <color name="colorPrimaryDark">#6495ED</color>
+    <color name="colorAccent">#4169E1</color>
+    <color name="lavender">#E6E6FA</color>
+    <color name="light_blue">#ADD8E6</color>
+    <color name="gainsboro">#DCDCDC</color>
+    <color name="light_grey">#D3D3D3</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="dark_gray">#A9A9A9</color>
+    <color name="gray">#808080</color>
+    <color name="dim_gray">#696969</color>
+    <color name="white_smoke">#F5F5F5</color>
 </resources>
