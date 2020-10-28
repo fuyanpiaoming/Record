@@ -32,4 +32,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CustomTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--状态栏颜色-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--控制各个控件被选中时的颜色-->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--Appbar/Toolbar背景色-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--页面背景色-->
+        <item name="android:windowBackground">@color/gray</item>
+
+    </style>
+
 </resources>
