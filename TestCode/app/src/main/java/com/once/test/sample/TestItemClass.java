@@ -8,6 +8,7 @@ import android.app.Activity;
 import com.once.test.activity.TestCustomProviderActivity;
 import com.once.test.activity.TestDrawLayoutActivity;
 import com.once.test.activity.TestFragmentActivity;
+import com.once.test.activity.TestFragmentDynamicActivity;
 import com.once.test.activity.TestNotificationActivity;
 import com.once.test.activity.TestPermissionActivity;
 import com.once.test.activity.TestServiceActivity;
@@ -100,6 +101,9 @@ public class TestItemClass {
 
         itemNames.add("Fragment");
         itemClasses.add(TestFragmentActivity.class);
+
+        itemNames.add("DynamicFragment");
+        itemClasses.add(TestFragmentDynamicActivity.class);
     }
 
 

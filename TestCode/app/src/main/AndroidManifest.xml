@@ -17,7 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.TestFragmentActivity"/>
+        <activity android:name=".activity.TestFragmentDynamicActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activity.TestFragmentActivity" />
         <activity
             android:name=".activity.TestCollapsingToolbarActivity"
             android:label="CollapsingToolbar"
