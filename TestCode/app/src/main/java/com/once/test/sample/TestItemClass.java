@@ -12,6 +12,7 @@ import com.once.test.activity.TestFragmentDynamicActivity;
 import com.once.test.activity.TestListActivity;
 import com.once.test.activity.TestNotificationActivity;
 import com.once.test.activity.TestPermissionActivity;
+import com.once.test.activity.TestRecycleViewActivity;
 import com.once.test.activity.TestServiceActivity;
 import com.once.test.activity.TestSqlActivity;
 import com.once.test.activity.TestToolbarActivity;
@@ -108,6 +109,9 @@ public class TestItemClass {
 
         itemNames.add("ListView");
         itemClasses.add(TestListActivity.class);
+
+        itemNames.add("RecycleView");
+        itemClasses.add(TestRecycleViewActivity.class);
     }
 
 
