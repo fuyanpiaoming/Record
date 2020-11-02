@@ -9,6 +9,7 @@ import com.once.test.activity.TestCustomProviderActivity;
 import com.once.test.activity.TestDrawLayoutActivity;
 import com.once.test.activity.TestFragmentActivity;
 import com.once.test.activity.TestFragmentDynamicActivity;
+import com.once.test.activity.TestLifeCycleOneActivity;
 import com.once.test.activity.TestListActivity;
 import com.once.test.activity.TestNotificationActivity;
 import com.once.test.activity.TestPermissionActivity;
@@ -95,7 +96,6 @@ public class TestItemClass {
         itemNames.add("Notification");
         itemClasses.add(TestNotificationActivity.class);
 
-
         itemNames.add("Toolbar");
         itemClasses.add(TestToolbarActivity.class);
 
@@ -116,6 +116,9 @@ public class TestItemClass {
 
         itemNames.add("ViewPager");
         itemClasses.add(TestViewPageActivity.class);
+
+        itemNames.add("LifeCycleActivity");
+        itemClasses.add(TestLifeCycleOneActivity.class);
     }
 
 
