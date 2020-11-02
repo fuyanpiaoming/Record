@@ -1,5 +1,6 @@
 package com.once.test.activity;
 
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.view.View;
 
 import com.once.test.R;
 import com.once.test.adapter.MyFragmentPagerAdapter;
+import com.once.test.adapter.MyFragmentStatePagerAdapter;
 import com.once.test.adapter.MyViewPageAdapter;
 import com.once.test.fragment.BlankFragment;
 import com.once.test.fragment.DynamicFragment1;
@@ -37,7 +39,7 @@ public class TestViewPageActivity extends AppCompatActivity implements View.OnCl
 
         viewPager = findViewById(R.id.view_page);
         viewPager.addOnPageChangeListener(onPageChangeListener);
-        viewPager.setPageTransformer(true, new ScalePageTransformer());
+
 
         findViewById(R.id.btn_one).setOnClickListener(this);
         findViewById(R.id.btn_two).setOnClickListener(this);
@@ -74,13 +76,19 @@ public class TestViewPageActivity extends AppCompatActivity implements View.OnCl
             case R.id.btn_one:
                 MyViewPageAdapter myViewPageAdapter = new MyViewPageAdapter(viewList);
                 viewPager.setAdapter(myViewPageAdapter);
+                viewPager.setPageTransformer(true, new ScalePageTransformer());
                 break;
             case R.id.btn_two:
                 MyFragmentPagerAdapter myFragmentPagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager(), fragmentList);
-                viewPager.setCurrentItem(0);
+                viewPager.setCurrentItem(1);
                 viewPager.setAdapter(myFragmentPagerAdapter);
+                viewPager.setPageTransformer(true, new DepthPageTransformer());
                 break;
             case R.id.btn_three:
+                MyFragmentStatePagerAdapter myFragmentStatePagerAdapter = new MyFragmentStatePagerAdapter(getSupportFragmentManager(),fragmentList);
+                viewPager.setCurrentItem(1);
+                viewPager.setAdapter(myFragmentStatePagerAdapter);
+                viewPager.setPageTransformer(true,new RotatePagerTransform());
                 break;
         }
     }
@@ -171,6 +179,27 @@ public class TestViewPageActivity extends AppCompatActivity implements View.OnCl
                 view.setAlpha(0);
             }
         }
+    }
+
+    public class RotatePagerTransform implements ViewPager.PageTransformer{
+
+        private static final float ROTATION = 30.0f;
+        @Override
+        public void transformPage(@NonNull View page, float position) {
+            if (position < -1){
+                rotate(page,-ROTATION);
+            }else if(position <= 1){
+                rotate(page,ROTATION * position);
+            }else{
+                rotate(page,ROTATION);
+            }
+        }
+    }
+
+    private void rotate(View page,float rotation){
+        page.setPivotX(page.getWidth()*0.5f);
+        page.setPivotY(page.getHeight());
+        page.setRotation(rotation);
     }
 
 }
