@@ -16,6 +16,7 @@ import com.once.test.activity.TestRecycleViewActivity;
 import com.once.test.activity.TestServiceActivity;
 import com.once.test.activity.TestSqlActivity;
 import com.once.test.activity.TestToolbarActivity;
+import com.once.test.activity.TestViewPageActivity;
 import com.once.test.eventbus.TestEventBus2Activity;
 import com.once.test.eventbus.TestEventBusActivity;
 import com.once.test.math.TestCanvasActivity;
@@ -112,6 +113,9 @@ public class TestItemClass {
 
         itemNames.add("RecycleView");
         itemClasses.add(TestRecycleViewActivity.class);
+
+        itemNames.add("ViewPager");
+        itemClasses.add(TestViewPageActivity.class);
     }
 
 
