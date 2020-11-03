@@ -17,14 +17,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.TestHandlerActivity"
+        <activity android:name=".activity.TestViewPageTwoActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".activity.TestLifeCycleTwoActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".activity.TestLifeCycleOneActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".activity.TestViewPageActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".activity.TestHandlerActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.TestLifeCycleTwoActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.TestLifeCycleOneActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.TestViewPageActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.TestRecycleViewActivity"
             android:theme="@style/AppTheme.NoActionBar" />
