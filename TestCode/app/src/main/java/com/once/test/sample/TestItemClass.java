@@ -12,6 +12,7 @@ import com.once.test.activity.TestFragmentDynamicActivity;
 import com.once.test.activity.TestHandlerActivity;
 import com.once.test.activity.TestLifeCycleOneActivity;
 import com.once.test.activity.TestListActivity;
+import com.once.test.activity.TestMediaPlayerActivity;
 import com.once.test.activity.TestNotificationActivity;
 import com.once.test.activity.TestPermissionActivity;
 import com.once.test.activity.TestRecycleViewActivity;
@@ -139,6 +140,9 @@ public class TestItemClass {
 
         itemNames.add("TakePhoto");
         itemClasses.add(TestTakePhotoActivity.class);
+
+        itemNames.add("Music");
+        itemClasses.add(TestMediaPlayerActivity.class);
     }
 
 }
