@@ -5,11 +5,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,6 +23,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class TestTakePhotoActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private final String TAG = TestTakePhotoActivity.class.getSimpleName();
 
     private ImageView imageView;
     private Button button;
@@ -40,6 +44,7 @@ public class TestTakePhotoActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View v) {
         File file = new File(getExternalCacheDir(),"book.jpg");
+        Log.i(TAG,"onClick]file path=" + file.getAbsolutePath().toString());
         try{
             if(file.exists()){
                 file.delete();
@@ -53,7 +58,7 @@ public class TestTakePhotoActivity extends AppCompatActivity implements View.OnC
         }else{
             uri = Uri.fromFile(file);
         }
-
+        Log.i(TAG,"[onClick]uri=" + uri);
         Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
         intent.putExtra(MediaStore.EXTRA_OUTPUT,uri);
         startActivityForResult(intent,1);
