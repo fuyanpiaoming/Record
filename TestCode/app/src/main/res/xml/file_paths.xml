@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+    1.Context.getFilesDir() + /path/
+    <files-path name="name" path="path" />
+
+    2.Context.getCacheDir() + /path/
+    <cache-path name="name" path="path" />
+
+    3.Environment.getExternalStorageDirectory() + /path/
+    <external-path name="name" path="path" />
+
+    4.Context.getExternalFilesDir(String) + /path/
+    <external-files-path name="name" path="path" />
+
+    5.Context.getExternalCacheDir() + /path/
+    <external-cache-path name="name" path="path" />
+    -->
+    <external-path
+        name="my_picture"
+        path="path" />
+</paths>

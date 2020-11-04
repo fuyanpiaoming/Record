@@ -8,6 +8,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -17,8 +19,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.TestViewPagerFourActivity"
+        <activity android:name=".activity.TestTakePhotoActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".activity.TestViewPagerFourActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.TestViewPagerThreeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -134,6 +139,16 @@
             android:name=".broadcast.MyReceiver"
             android:enabled="true"
             android:exported="true" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.once.test.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
     </application>
 
 </manifest>

@@ -17,6 +17,7 @@ import com.once.test.activity.TestPermissionActivity;
 import com.once.test.activity.TestRecycleViewActivity;
 import com.once.test.activity.TestServiceActivity;
 import com.once.test.activity.TestSqlActivity;
+import com.once.test.activity.TestTakePhotoActivity;
 import com.once.test.activity.TestToolbarActivity;
 import com.once.test.activity.TestViewPageActivity;
 import com.once.test.activity.TestViewPageTwoActivity;
@@ -135,5 +136,9 @@ public class TestItemClass {
 
         itemNames.add("ViewPagerCustomTitle");
         itemClasses.add(TestViewPagerFourActivity.class);
+
+        itemNames.add("TakePhoto");
+        itemClasses.add(TestTakePhotoActivity.class);
     }
+
 }
