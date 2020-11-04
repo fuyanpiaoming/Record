@@ -24,6 +24,7 @@ import com.once.test.activity.TestViewPageActivity;
 import com.once.test.activity.TestViewPageTwoActivity;
 import com.once.test.activity.TestViewPagerFourActivity;
 import com.once.test.activity.TestViewPagerThreeActivity;
+import com.once.test.activity.TestWebViewActivity;
 import com.once.test.eventbus.TestEventBus2Activity;
 import com.once.test.eventbus.TestEventBusActivity;
 import com.once.test.math.TestCanvasActivity;
@@ -143,6 +144,9 @@ public class TestItemClass {
 
         itemNames.add("Music");
         itemClasses.add(TestMediaPlayerActivity.class);
+
+        itemNames.add("WebView");
+        itemClasses.add(TestWebViewActivity.class);
     }
 
 }

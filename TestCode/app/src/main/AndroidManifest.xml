@@ -19,8 +19,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.TestMediaPlayerActivity"
+        <activity android:name=".activity.TestWebViewActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".activity.TestMediaPlayerActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.TestTakePhotoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
