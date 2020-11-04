@@ -20,6 +20,7 @@ import com.once.test.activity.TestSqlActivity;
 import com.once.test.activity.TestToolbarActivity;
 import com.once.test.activity.TestViewPageActivity;
 import com.once.test.activity.TestViewPageTwoActivity;
+import com.once.test.activity.TestViewPagerFourActivity;
 import com.once.test.activity.TestViewPagerThreeActivity;
 import com.once.test.eventbus.TestEventBus2Activity;
 import com.once.test.eventbus.TestEventBusActivity;
@@ -131,5 +132,8 @@ public class TestItemClass {
 
         itemNames.add("ViewPagerWithTitle");
         itemClasses.add(TestViewPagerThreeActivity.class);
+
+        itemNames.add("ViewPagerCustomTitle");
+        itemClasses.add(TestViewPagerFourActivity.class);
     }
 }
