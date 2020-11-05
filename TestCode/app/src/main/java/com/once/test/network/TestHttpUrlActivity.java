@@ -70,8 +70,7 @@ public class TestHttpUrlActivity extends Activity {
                     break;
                 case R.id.btn_http_get_picture:
                     ImageLoadTask imageLoadTask = new ImageLoadTask();
-                    //imageLoadTask.execute("http://img31.mtime.cn/mg/2012/10/30/201631.37192876.jpg");
-                    imageLoadTask.execute("https://github.com/fuyanpiaoming/Test/blob/master/pic/test3.jpg");
+                    imageLoadTask.execute("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604568835919&di=ea8eb8fad84822cd999710755e327665&imgtype=0&src=http%3A%2F%2Fa0.att.hudong.com%2F56%2F12%2F01300000164151121576126282411.jpg");
                     break;
 
                 case R.id.btn_http_test_get:
@@ -112,10 +111,16 @@ public class TestHttpUrlActivity extends Activity {
                     int responseCode = httpURLConnection.getResponseCode();
                     if (responseCode == HttpURLConnection.HTTP_OK){
                         InputStream inputStream = httpURLConnection.getInputStream();
-                        String result = is2string(inputStream);
-                        contentTxt.setText(result);
+                        final String result = is2string(inputStream);
+                        inputStream.close();
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                contentTxt.setText(result);
+                            }
+                        });
                     }
-
+                    httpURLConnection.disconnect();
                 }catch (IOException e){
 
                 }
@@ -136,13 +141,15 @@ public class TestHttpUrlActivity extends Activity {
     }
 
     private void getWebInfo(){
+        HttpURLConnection httpURLConnection = null;
+
         try{
             URL url = new URL("https://www.baidu.com/");
-            HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+            httpURLConnection = (HttpURLConnection)url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-            StringBuffer stringBuffer = new StringBuffer();
+            final StringBuffer stringBuffer = new StringBuffer();
             String temp = null;
             while ((temp = bufferedReader.readLine() )!= null){
                 stringBuffer.append(temp);
@@ -151,11 +158,20 @@ public class TestHttpUrlActivity extends Activity {
             inputStreamReader.close();
             inputStream.close();
             Log.i(TAG, "getWebInfo:" + stringBuffer.toString());
-            contentTxt.setText(stringBuffer.toString());
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    contentTxt.setText(stringBuffer.toString());
+                }
+            });
         }catch (MalformedURLException e){
 
         }catch (IOException e){
 
+        }finally {
+            if (httpURLConnection != null){
+                httpURLConnection.disconnect();
+            }
         }
     }
 
@@ -164,21 +180,32 @@ public class TestHttpUrlActivity extends Activity {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                HttpURLConnection httpURLConnection = null;
                 try{
                     URL url = new URL("https://www.baidu.com");
-                    HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+                    httpURLConnection = (HttpURLConnection)url.openConnection();
                     httpURLConnection.setRequestMethod("GET");
                     httpURLConnection.connect();
                     int responseCode = httpURLConnection.getResponseCode();
                     if (responseCode == HttpURLConnection.HTTP_OK){
                         InputStream inputStream = httpURLConnection.getInputStream();
-                        String result = is2string(inputStream);
+                        final String result = is2string(inputStream);
+                        inputStream.close();
                         Log.i(TAG,"[testHttpGet]result="+ result);
-                        contentTxt.setText(result);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                contentTxt.setText(result);
+                            }
+                        });
                     }
 
                 }catch (Exception e){
 
+                }finally {
+                    if (httpURLConnection != null){
+                        httpURLConnection.disconnect();
+                    }
                 }
 
             }
@@ -203,10 +230,17 @@ public class TestHttpUrlActivity extends Activity {
                     int responseCode = httpURLConnection.getResponseCode();
                     if (responseCode == HttpURLConnection.HTTP_OK){
                         InputStream inputStream = httpURLConnection.getInputStream();
-                        String result = is2string(inputStream);
+                        final String result = is2string(inputStream);
                         Log.i(TAG,"[testHttpPost]result=" + result);
-                        contentTxt.setText(result);
+                        inputStream.close();
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                contentTxt.setText(result);
+                            }
+                        });
                     }
+                    httpURLConnection.disconnect();
                 }catch (IOException e){
 
                 }
@@ -237,10 +271,16 @@ public class TestHttpUrlActivity extends Activity {
                     int responseCode = httpURLConnection.getResponseCode();
                     if (responseCode == HttpURLConnection.HTTP_OK){
                         InputStream inputStream = httpURLConnection.getInputStream();
-                        String result = is2string(inputStream);
-                        contentTxt.setText(result);
+                        final String result = is2string(inputStream);
+                        inputStream.close();
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                contentTxt.setText(result);
+                            }
+                        });
                     }
-
+                    httpURLConnection.disconnect();
                 }catch (IOException e){
 
                 }
@@ -298,15 +338,26 @@ public class TestHttpUrlActivity extends Activity {
         protected Bitmap doInBackground(String... strings) {
             Log.i(TAG,"doInBackground string[0]=" + strings[0]);
             Bitmap bm = null;
+            HttpURLConnection httpURLConnection = null;
             try{
                 URL url = new URL(strings[0]);
-                HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+                httpURLConnection = (HttpURLConnection)url.openConnection();
+                httpURLConnection.setDoInput(true);
+                httpURLConnection.setReadTimeout(10000);
+                httpURLConnection.setConnectTimeout(5000);
+                Log.i(TAG,"[doInBackground]set param");
                 InputStream inputStream = httpURLConnection.getInputStream();
+                Log.i(TAG,"[doInBackground]inputString=" + inputStream.toString());
                 bm = BitmapFactory.decodeStream(inputStream);
+                inputStream.close();
             }catch (MalformedURLException e){
 
             }catch (IOException e){
 
+            }finally {
+                if (httpURLConnection != null){
+                    httpURLConnection.disconnect();
+                }
             }
             return bm;
         }
