@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/book"
+    android:antialias="true"
+    android:dither="true"
+    android:filter="true"
+    android:gravity="center"
+    android:mipMap="false"
+    android:tileMode="clamp"
+    android:alpha="0.8"
+    android:autoMirrored="false"
+    android:tileModeX="disabled"
+    android:tileModeY="disabled"
+    android:tint="@color/color_qian"
+    android:tintMode="screen">
+</bitmap>

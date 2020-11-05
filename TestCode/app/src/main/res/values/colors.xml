@@ -2,13 +2,116 @@
     <color name="colorPrimary">#4169E1</color>
     <color name="colorPrimaryDark">#6495ED</color>
     <color name="colorAccent">#4169E1</color>
+
     <color name="lavender">#E6E6FA</color>
     <color name="light_blue">#ADD8E6</color>
     <color name="gainsboro">#DCDCDC</color>
+
     <color name="light_grey">#D3D3D3</color>
     <color name="silver">#C0C0C0</color>
     <color name="dark_gray">#A9A9A9</color>
+
     <color name="gray">#808080</color>
     <color name="dim_gray">#696969</color>
     <color name="white_smoke">#F5F5F5</color>
+
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_black">#000000</color>
+    <color name="color_transparent">#FF000000</color>
+
+    <color name="color_bustard">#f7acbc</color>
+    <color name="color_hesitant">#ef5b9c</color>
+    <color name="color_sakura">#feeeed</color>
+
+    <color name="color_rose">#f05b72</color>
+    <color name="color_coral">#f8aba6</color>
+    <color name="color_red_plum">#f69c9f</color>
+
+    <color name="color_peach">#f58f98</color>
+    <color name="color_thin_persimmon">#ca8687</color>
+    <color name="color_bo_hong_mei">#f391a9</color>
+
+    <color name="color_dawn">#bd6758</color>
+    <color name="color_red">#d71345</color>
+    <color name="color_crimson_oak">#deab8a</color>
+
+    <color name="color_oily">#817936</color>
+    <color name="color_cyan_bellflower">#444693</color>
+    <color name="color_ji">#fedcbd</color>
+
+    <color name="color_jia_luo">#7f7522</color>
+    <color name="color_hua">#2b4490</color>
+    <color name="color_ceng">#f47920</color>
+
+    <color name="color_qing_dan">#80752c</color>
+    <color name="color_liu_li">#2a5caa</color>
+
+    <color name="color_cha">#8f4b2e</color>
+    <color name="color_li_jiu">#726930</color>
+    <color name="color_qian">#003a6c</color>
+
+    <color name="color_hua_cha">#87481f</color>
+    <color name="color_mei_cha">#454926</color>
+    <color name="color_qing_lan">#102b6a</color>
+
+    <color name="color_ku_cha">#5f3c23</color>
+    <color name="color_song_cha">#2e3a1f</color>
+    <color name="color_du_ruo">#426ab3</color>
+
+    <color name="color_jia_cha">#6b473c</color>
+    <color name="color_qing_dun">#4d4f36</color>
+    <color name="color_sheng">#46485f</color>
+
+    <color name="color_qian_zi">#faa755</color>
+    <color name="color_mo_cha">#b7ba6b</color>
+    <color name="color_qun_qing">#4e72b8</color>
+
+    <color name="color_xing">#fab27b</color>
+    <color name="color_huang_lv">#b2d235</color>
+    <color name="color_tie_qian">#181d4b</color>
+
+
+    <color name="color_he">#843900</color>
+    <color name="color_ruo_cao">#bed742</color>
+    <color name="color_qing_he">#121a2a</color>
+
+    <color name="color_chi_dan">#d64f44</color>
+    <color name="color_lu_kao">#905d1d</color>
+    <color name="color_ruo_lv">#7fb80e</color>
+    <color name="color_he_fan">#0c212b</color>
+
+    <color name="color_hong_chi">#d93a49</color>
+    <color name="color_yi">#8a5d19</color>
+    <color name="color_meng_huang">#a3cf62</color>
+    <color name="color_teng_na">#6a6da9</color>
+
+    <color name="color_zhen_zhu">#b3424a</color>
+    <color name="color_ding_zi">#8c531b</color>
+    <color name="color_miao">#769149</color>
+    <color name="color_ji_geng">#585eaa</color>
+
+    <color name="color_jin_yang">#bb505d</color>
+    <color name="color_huang_lu">#64492b</color>
+    <color name="color_liu_se">#78a355</color>
+    <color name="color_teng_se">#afb4db</color>
+
+    <color name="color_mei_ran">#987165</color>
+    <color name="color_tu_qi">#ae6642</color>
+    <color name="color_ruo_cao_1">#abc88b</color>
+    <color name="color_teng_zi">#9b95c9</color>
+
+    <color name="color_hu_fen">#fffef9</color>
+    <color name="color_hui_bai">#f6f5ec</color>
+    <color name="color_xiang_ya">#d9d6c3</color>
+    <color name="color_ru_bai">#d1c7b7</color>
+
+    <color name="color_bao_dun">#999d9c</color>
+    <color name="color_yin_shu">#a1a3a6</color>
+    <color name="color_cha_shu">#9d9087</color>
+    <color name="color_shu_se">#8a8c8e</color>
+
+    <color name="color_bao_mo">#74787c</color>
+    <color name="color_li_xiu">#7c8577</color>
+    <color name="color_qian_se">#72777b</color>
+    <color name="color_hui_se">#77787b</color>
 </resources>
