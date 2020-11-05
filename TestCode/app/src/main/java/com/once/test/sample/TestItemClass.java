@@ -14,6 +14,7 @@ import com.once.test.activity.TestLifeCycleOneActivity;
 import com.once.test.activity.TestListActivity;
 import com.once.test.activity.TestMediaPlayerActivity;
 import com.once.test.activity.TestNotificationActivity;
+import com.once.test.activity.TestParseXmlActivity;
 import com.once.test.activity.TestPermissionActivity;
 import com.once.test.activity.TestRecycleViewActivity;
 import com.once.test.activity.TestServiceActivity;
@@ -147,6 +148,9 @@ public class TestItemClass {
 
         itemNames.add("WebView");
         itemClasses.add(TestWebViewActivity.class);
+
+        itemNames.add("XML Parse");
+        itemClasses.add(TestParseXmlActivity.class);
     }
 
 }
