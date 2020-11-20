@@ -1,22 +1,31 @@
 package com.once.test.mode;
 
 public class Book {
-    private String bookName;
-    private int bookImageId;
+    private String name;
+    private int id;
+    private int page;
 
     public String getName() {
-        return bookName;
+        return name;
     }
 
     public void setName(String name) {
-        this.bookName = name;
+        this.name = name;
     }
 
-    public int getImageId() {
-        return bookImageId;
+    public int getId() {
+        return id;
     }
 
-    public void setImageId(int imageId) {
-        this.bookImageId = imageId;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getPage() {
+        return page;
+    }
+
+    public void setPage(int page) {
+        this.page = page;
     }
 }
