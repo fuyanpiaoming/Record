@@ -20,6 +20,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name=".activity.TestParseXmlActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
             android:name=".network.TestOppoPushActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
