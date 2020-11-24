@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.once.test.R;
 import com.once.test.mode.Book;
+import com.once.test.utils.DomUtils;
 import com.once.test.utils.SaxHandler;
 
 import org.xml.sax.SAXException;
@@ -54,6 +55,8 @@ public class TestParseXmlActivity extends AppCompatActivity implements View.OnCl
             case R.id.btn_pull:
                 break;
             case R.id.btn_dom:
+                bookList = DomUtils.parseXml(this);
+                showResult(bookList);
                 break;
         }
     }
