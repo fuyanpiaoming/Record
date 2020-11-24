@@ -51,14 +51,20 @@ public class TestSqlActivity extends Activity implements View.OnClickListener {
                 v3.put("age", 40);
                 v3.put("name", "Pine");
                 sqLiteDatabase.insert("Student", null, v3);
+
+                sqlOpenHelper.insert(sqLiteDatabase);
                 break;
             case R.id.btn_delete:
-                sqLiteDatabase.delete("Student", "age>?", new String[]{"15"});
+                sqLiteDatabase.delete("Student", "age>?", new String[]{"40"});
+
+                sqlOpenHelper.delete(sqLiteDatabase);
                 break;
             case R.id.btn_update:
                 ContentValues contentValues3 = new ContentValues();
                 contentValues3.put("age", 18);
                 sqLiteDatabase.update("Student", contentValues3, "name=?", new String[]{"Liu"});
+
+                sqlOpenHelper.update(sqLiteDatabase);
                 break;
             case R.id.btn_query:
                 Cursor cursor = sqLiteDatabase.query("Student", null, null, null, null, null, null);
@@ -70,6 +76,8 @@ public class TestSqlActivity extends Activity implements View.OnClickListener {
                     } while (cursor.moveToNext());
                 }
                 cursor.close();
+
+                sqlOpenHelper.query(sqLiteDatabase);
                 break;
         }
 
