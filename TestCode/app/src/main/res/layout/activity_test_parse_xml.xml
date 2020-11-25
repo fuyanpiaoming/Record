@@ -38,6 +38,15 @@
             android:background="@color/color_bao_dun"
             android:gravity="center"
             android:text="DOM" />
+
+        <Button
+            android:id="@+id/btn_create_xml"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/color_red"
+            android:gravity="center"
+            android:text="CreateXml" />
     </LinearLayout>
 
     <TextView
