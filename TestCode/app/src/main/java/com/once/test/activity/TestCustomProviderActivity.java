@@ -37,7 +37,7 @@ public class TestCustomProviderActivity extends Activity implements View.OnClick
                 update();
                 break;
             case R.id.btn_query:
-                query(2);
+                query();
                 break;
             default:
                 break;
@@ -54,6 +54,7 @@ public class TestCustomProviderActivity extends Activity implements View.OnClick
         Uri newUri = getContentResolver().insert(uri, contentValues);
         assert newUri != null;
         id = newUri.getPathSegments().get(1);
+        Log.i("lzj","[add]id=" +id);
     }
 
     private void del() {
@@ -87,13 +88,15 @@ public class TestCustomProviderActivity extends Activity implements View.OnClick
         Uri uri = Uri.parse("content://com.once.test.provider/book");
         Cursor cursor = getContentResolver().query(uri, null, null, null,null);
         if (cursor != null) {
-            while (cursor.moveToNext()) {
+            cursor.moveToFirst();
+            do{
+                int id = cursor.getInt(cursor.getColumnIndex("id"));
                 String name = cursor.getString(cursor.getColumnIndex("name"));
                 String author = cursor.getString(cursor.getColumnIndex("author"));
                 int pages = cursor.getInt(cursor.getColumnIndex("pages"));
                 double price = cursor.getDouble(cursor.getColumnIndex("price"));
-                Log.i("lzj", "[query]name=" + name + ",author=" + author + ",pages=" + pages + ",price=" + price);
-            }
+                Log.i("lzj", "[query]id=" + id +",name=" + name + ",author=" + author + ",pages=" + pages + ",price=" + price);
+            }while(cursor.moveToNext());
         }
     }
 
