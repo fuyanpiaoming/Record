@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import android.app.Activity;
 
+import com.once.test.activity.TestBroadcastActivity;
 import com.once.test.activity.TestCustomProviderActivity;
 import com.once.test.activity.TestDrawLayoutActivity;
 import com.once.test.activity.TestFragmentActivity;
@@ -151,6 +152,9 @@ public class TestItemClass {
 
         itemNames.add("XML Parse");
         itemClasses.add(TestParseXmlActivity.class);
+
+        itemNames.add("Broadcast");
+        itemClasses.add(TestBroadcastActivity.class);
     }
 
 }

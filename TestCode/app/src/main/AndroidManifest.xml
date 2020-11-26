@@ -19,7 +19,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.TestAsyncTaskActivity"/>
+
+        <activity android:name=".activity.TestBroadcastActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+
+        <activity android:name=".activity.TestAsyncTaskActivity" />
         <activity
             android:name=".activity.TestParseXmlActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -149,11 +154,6 @@
             android:enabled="true"
             android:exported="true" />
 
-        <receiver
-            android:name=".broadcast.MyReceiver"
-            android:enabled="true"
-            android:exported="true" />
-
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.once.test.fileprovider"
@@ -163,6 +163,15 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
+        <receiver
+            android:name=".receiver.BootCompleteReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
