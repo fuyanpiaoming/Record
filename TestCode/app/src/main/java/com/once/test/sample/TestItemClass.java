@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import android.app.Activity;
 
+import com.once.test.activity.ChatActivity;
 import com.once.test.activity.TestBroadcastActivity;
 import com.once.test.activity.TestCustomProviderActivity;
 import com.once.test.activity.TestDrawLayoutActivity;
@@ -27,6 +28,7 @@ import com.once.test.activity.TestViewPageTwoActivity;
 import com.once.test.activity.TestViewPagerFourActivity;
 import com.once.test.activity.TestViewPagerThreeActivity;
 import com.once.test.activity.TestWebViewActivity;
+import com.once.test.adapter.ChatAdapter;
 import com.once.test.eventbus.TestEventBus2Activity;
 import com.once.test.eventbus.TestEventBusActivity;
 import com.once.test.math.TestCanvasActivity;
@@ -155,6 +157,9 @@ public class TestItemClass {
 
         itemNames.add("Broadcast");
         itemClasses.add(TestBroadcastActivity.class);
+
+        itemNames.add("Chat");
+        itemClasses.add(ChatActivity.class);
     }
 
 }

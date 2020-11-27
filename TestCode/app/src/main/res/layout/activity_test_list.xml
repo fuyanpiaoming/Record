@@ -35,6 +35,10 @@
 
     <ListView
         android:id="@+id/list_view"
+        android:divider="@color/color_ceng"
+        android:dividerHeight="1dp"
+        android:scrollbars="none"
+        android:listSelector="@color/color_red"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

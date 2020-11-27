@@ -34,6 +34,10 @@ public class TestListActivity extends AppCompatActivity {
 
         findViewById(R.id.btn_custom).setOnClickListener(onClickListener);
         findViewById(R.id.btn_array).setOnClickListener(onClickListener);
+
+        for(int i=0; i < listView.getChildCount(); i++){
+            View view = listView.getChildAt(i);
+        }
     }
 
     private void initCustomList(){

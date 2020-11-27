@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_hui_bai"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/edit_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white_smoke"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/edit_msg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:hint="发送消息"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="@color/color_white"
+            android:autofillHints="nihao" />
+        <Button
+            android:id="@+id/btn_send_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/ic_add" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/chat_recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/edit_layout"/>
+
+</RelativeLayout>
