@@ -1,5 +1,6 @@
 package com.once.test.activity;
 
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import com.once.test.R;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -43,6 +45,8 @@ public class TestFileActivity extends AppCompatActivity {
                 writeData();
             }
         });
+
+        getPath();
     }
 
     private void getData() {
@@ -95,5 +99,29 @@ public class TestFileActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    private void getPath(){
+        StringBuilder stringBuilder = new StringBuilder();
+        File file = getExternalCacheDir();
+        if (file != null){
+            stringBuilder.append("file=").append(file.getAbsolutePath()).append("\n");
+        }
+        File file1 = Environment.getExternalStorageDirectory();
+        if (file1 != null){
+            stringBuilder.append("file1=").append(file1.getAbsolutePath()).append("\n");
+        }
+        File file2 = Environment.getDataDirectory();
+        assert file2!= null;
+        stringBuilder.append("file2=").append(file2.getAbsolutePath()).append("\n");
+
+        File file4 = Environment.getRootDirectory();
+        assert file4 != null;
+        stringBuilder.append("file4").append(file4.getAbsolutePath()).append("\n");
+
+        File file5 = Environment.getDownloadCacheDirectory();
+        assert file5!= null;
+        stringBuilder.append("file5=").append(file5.getAbsolutePath()).append("\n");
+        textView.setText(stringBuilder.toString());
     }
 }

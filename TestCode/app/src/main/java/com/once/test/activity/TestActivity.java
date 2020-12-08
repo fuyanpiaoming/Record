@@ -2,8 +2,6 @@ package com.once.test.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-
 import com.once.test.R;
 
 
