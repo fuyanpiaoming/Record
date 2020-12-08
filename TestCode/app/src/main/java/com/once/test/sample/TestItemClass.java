@@ -9,6 +9,7 @@ import com.once.test.activity.ChatActivity;
 import com.once.test.activity.TestBroadcastActivity;
 import com.once.test.activity.TestCustomProviderActivity;
 import com.once.test.activity.TestDrawLayoutActivity;
+import com.once.test.activity.TestFileActivity;
 import com.once.test.activity.TestFragmentActivity;
 import com.once.test.activity.TestFragmentDynamicActivity;
 import com.once.test.activity.TestHandlerActivity;
@@ -160,6 +161,9 @@ public class TestItemClass {
 
         itemNames.add("Chat");
         itemClasses.add(ChatActivity.class);
+
+        itemNames.add("File");
+        itemClasses.add(TestFileActivity.class);
     }
 
 }
