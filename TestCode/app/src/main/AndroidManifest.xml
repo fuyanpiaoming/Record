@@ -19,7 +19,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.TestSharedPreferencesActivity"></activity>
+        <provider
+            android:name=".provider.MyContentProvider"
+            android:authorities="com.once.test.provider"
+            android:enabled="true"
+            android:exported="true"/>
+
+        <activity
+            android:name=".activity.TestSharedPreferencesActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".activity.TestFileActivity"
             android:theme="@style/AppTheme.NoActionBar" />

@@ -6,9 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".activity.TestActivity">
 
-    <FrameLayout
-        android:id="@+id/fl_container"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Add"/>
+
+        <Button
+            android:id="@+id/btn_del"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Del"/>
+
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Update"/>
+
+        <Button
+            android:id="@+id/btn_query"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Query"/>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

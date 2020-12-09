@@ -6,6 +6,7 @@ import java.util.HashMap;
 import android.app.Activity;
 
 import com.once.test.activity.ChatActivity;
+import com.once.test.activity.TestActivity;
 import com.once.test.activity.TestBroadcastActivity;
 import com.once.test.activity.TestCustomProviderActivity;
 import com.once.test.activity.TestDrawLayoutActivity;
@@ -60,6 +61,9 @@ public class TestItemClass {
     }
 
     public void loadItem() {
+        itemNames.add("Test");
+        itemClasses.add(TestActivity.class);
+
         itemNames.add("TestContact");
         itemClasses.add(TestContactProviderActivity.class);
 
