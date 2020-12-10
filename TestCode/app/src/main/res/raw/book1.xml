@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--自定义属性最好不要写多个，尽量用一个表示数据，其他的尽量存储为元素,这个只是作为例子，说明可以存储多个属性-->
+<books>
+    <book id="1" value="A">
+        <name>Gril</name>
+        <page>200</page>
+    </book>
+    <book id="2" value="B">
+        <name>Boy</name>
+        <page>400</page>
+    </book>
+    <book id="3" value="C">
+        <name>People</name>
+        <page>800</page>
+    </book>
+</books>

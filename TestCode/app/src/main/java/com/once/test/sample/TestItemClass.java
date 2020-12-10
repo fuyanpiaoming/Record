@@ -14,6 +14,7 @@ import com.once.test.activity.TestFileActivity;
 import com.once.test.activity.TestFragmentActivity;
 import com.once.test.activity.TestFragmentDynamicActivity;
 import com.once.test.activity.TestHandlerActivity;
+import com.once.test.activity.TestJsonActivity;
 import com.once.test.activity.TestLifeCycleOneActivity;
 import com.once.test.activity.TestListActivity;
 import com.once.test.activity.TestMediaPlayerActivity;
@@ -168,6 +169,9 @@ public class TestItemClass {
 
         itemNames.add("File");
         itemClasses.add(TestFileActivity.class);
+
+        itemNames.add("Json");
+        itemClasses.add(TestJsonActivity.class);
     }
 
 }
