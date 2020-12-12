@@ -104,4 +104,9 @@ public class ModeA {
         @JSONField(alternateNames = {"uid", "pid", "fid"})
         private int id;
     }
+
+
+    class K{
+        int p1;
+    }
 }

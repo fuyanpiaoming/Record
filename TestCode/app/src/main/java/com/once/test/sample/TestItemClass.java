@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import android.app.Activity;
 
+import com.once.test.TestFastJsonActivity;
 import com.once.test.activity.ChatActivity;
 import com.once.test.activity.TestActivity;
 import com.once.test.activity.TestBroadcastActivity;
@@ -172,6 +173,9 @@ public class TestItemClass {
 
         itemNames.add("Json");
         itemClasses.add(TestJsonActivity.class);
+
+        itemNames.add("FastJson");
+        itemClasses.add(TestFastJsonActivity.class);
     }
 
 }
