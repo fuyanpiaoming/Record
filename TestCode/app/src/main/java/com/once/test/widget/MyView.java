@@ -83,6 +83,11 @@ public class MyView extends View {
     }
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
+    @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
@@ -187,5 +192,20 @@ public class MyView extends View {
      */
     public void setExampleDrawable(Drawable exampleDrawable) {
         mExampleDrawable = exampleDrawable;
+    }
+
+    private int measureWidth(int measureSpec){
+        int result = 0;
+        int specMode = MeasureSpec.getMode(measureSpec);
+        int specSize = MeasureSpec.getSize(measureSpec);
+        if (MeasureSpec.EXACTLY == specMode){
+            result = specSize;
+        }else{
+            result = 100;
+            if (MeasureSpec.AT_MOST == specMode){
+                result = Math.min(result,specSize);
+            }
+        }
+        return result;
     }
 }

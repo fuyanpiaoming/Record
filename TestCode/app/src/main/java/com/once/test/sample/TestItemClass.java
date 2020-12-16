@@ -5,7 +5,8 @@ import java.util.HashMap;
 
 import android.app.Activity;
 
-import com.once.test.TestFastJsonActivity;
+import com.once.test.activity.TestCustomViewActivity;
+import com.once.test.activity.TestFastJsonActivity;
 import com.once.test.activity.ChatActivity;
 import com.once.test.activity.TestActivity;
 import com.once.test.activity.TestBroadcastActivity;
@@ -32,7 +33,6 @@ import com.once.test.activity.TestViewPageTwoActivity;
 import com.once.test.activity.TestViewPagerFourActivity;
 import com.once.test.activity.TestViewPagerThreeActivity;
 import com.once.test.activity.TestWebViewActivity;
-import com.once.test.adapter.ChatAdapter;
 import com.once.test.eventbus.TestEventBus2Activity;
 import com.once.test.eventbus.TestEventBusActivity;
 import com.once.test.math.TestCanvasActivity;
@@ -42,7 +42,6 @@ import com.once.test.network.TestHttpUrlActivity;
 import com.once.test.network.TestOkhttpActivity;
 import com.once.test.network.TestVolley;
 import com.once.test.provider.TestContactProviderActivity;
-import com.once.test.store.TestSqlOpenHelper;
 import com.once.test.testhread.TestThreadPoolActivity;
 import com.once.test.testretrofit.TestRetrofitActivity;
 
@@ -176,6 +175,9 @@ public class TestItemClass {
 
         itemNames.add("FastJson");
         itemClasses.add(TestFastJsonActivity.class);
+
+        itemNames.add("CustomView");
+        itemClasses.add(TestCustomViewActivity.class);
     }
 
 }

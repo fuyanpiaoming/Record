@@ -1,4 +1,4 @@
-package com.once.test;
+package com.once.test.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import com.alibaba.fastjson.JSONWriter;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.once.test.R;
 import com.once.test.fastjson.ModeC;
 import com.once.test.mode.Book;
 
