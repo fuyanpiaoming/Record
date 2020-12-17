@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.Scroller;
 
 public class CustomView extends View {
+
+    private final String TAG = CustomView.class.getSimpleName();
 
     private Paint mPaint;
     private int lastX;
@@ -56,7 +59,9 @@ public class CustomView extends View {
     @Override
     public void computeScroll() {
         super.computeScroll();
+        Log.i(TAG,"[useScroller]computeScroll");
         if (scroller.computeScrollOffset()){
+            Log.i(TAG,"[useScroller]computeScroll.......");
             ((View)getParent()).scrollTo(scroller.getCurrX(),scroller.getCurrY());
             invalidate();
         }
@@ -166,12 +171,16 @@ public class CustomView extends View {
         int y = (int) event.getY();
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                lastX = x;
+                lastY = y;
                 break;
             case MotionEvent.ACTION_MOVE:
                 break;
             case MotionEvent.ACTION_UP:
+                Log.i(TAG,"[useScroller]ACTION_UP");
                 View view = (View)getParent();
-                scroller.startScroll(view.getScrollX(),view.getScrollY(),-view.getScrollX(), -view.getScrollY());
+                scroller.startScroll(view.getScrollX(),view.getScrollY(),-(x-lastX), -(y - lastY),500);
+                invalidate();
                 break;
         }
     }

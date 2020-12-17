@@ -6,7 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".activity.TestCustomViewActivity">
     <com.once.test.widget.CustomView
+        android:visibility="gone"
         android:layout_width="100dp"
         android:layout_height="100dp"/>
+    <com.once.test.widget.CustomViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:background="@color/color_ceng"/>
+        <Button
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:background="@color/color_red"/>
+
+
+    </com.once.test.widget.CustomViewGroup>
 
 </LinearLayout>
