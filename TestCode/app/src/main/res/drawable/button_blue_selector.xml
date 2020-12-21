@@ -17,10 +17,12 @@
         </shape>
     </item>
 
-    <item android:state_pressed="true">
+    <item
+        android:state_focused="true"
+        android:state_pressed="true">
         <shape android:shape="rectangle">
             <size android:width="20dp" android:height="10dp" />
-            <solid android:color="@color/color_hui_bai" />
+            <solid android:color="@color/color_red" />
             <corners android:radius="2dp" />
         </shape>
     </item>

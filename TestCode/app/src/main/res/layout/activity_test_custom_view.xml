@@ -12,14 +12,15 @@
     <com.once.test.widget.CustomViewGroup
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <com.once.test.widget.MyView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:background="@color/light_blue">
+        </com.once.test.widget.MyView>
         <Button
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:background="@color/color_ceng"/>
-        <Button
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:background="@color/color_red"/>
+            android:background="@color/silver"/>
 
 
     </com.once.test.widget.CustomViewGroup>

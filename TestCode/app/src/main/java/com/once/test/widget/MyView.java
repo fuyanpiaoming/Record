@@ -5,7 +5,12 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.View;
@@ -27,17 +32,17 @@ public class MyView extends View {
 
     public MyView(Context context) {
         super(context);
-        init(null, 0);
+        //init(null, 0);
     }
 
     public MyView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(attrs, 0);
+        //init(attrs, 0);
     }
 
     public MyView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        init(attrs, defStyle);
+        //init(attrs, defStyle);
     }
 
     private void init(AttributeSet attrs, int defStyle) {
@@ -87,32 +92,35 @@ public class MyView extends View {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        // TODO: consider storing these as member variables to reduce
-        // allocations per draw cycle.
-        int paddingLeft = getPaddingLeft();
-        int paddingTop = getPaddingTop();
-        int paddingRight = getPaddingRight();
-        int paddingBottom = getPaddingBottom();
+        testDraw(canvas);
 
-        int contentWidth = getWidth() - paddingLeft - paddingRight;
-        int contentHeight = getHeight() - paddingTop - paddingBottom;
-
-        // Draw the text.
-        canvas.drawText(mExampleString,
-                paddingLeft + (contentWidth - mTextWidth) / 2,
-                paddingTop + (contentHeight + mTextHeight) / 2,
-                mTextPaint);
-
-        // Draw the example drawable on top of the text.
-        if (mExampleDrawable != null) {
-            mExampleDrawable.setBounds(paddingLeft, paddingTop,
-                    paddingLeft + contentWidth, paddingTop + contentHeight);
-            mExampleDrawable.draw(canvas);
-        }
+//        // TODO: consider storing these as member variables to reduce
+//        // allocations per draw cycle.
+//        int paddingLeft = getPaddingLeft();
+//        int paddingTop = getPaddingTop();
+//        int paddingRight = getPaddingRight();
+//        int paddingBottom = getPaddingBottom();
+//
+//        int contentWidth = getWidth() - paddingLeft - paddingRight;
+//        int contentHeight = getHeight() - paddingTop - paddingBottom;
+//
+//        // Draw the text.
+//        canvas.drawText(mExampleString,
+//                paddingLeft + (contentWidth - mTextWidth) / 2,
+//                paddingTop + (contentHeight + mTextHeight) / 2,
+//                mTextPaint);
+//
+//        // Draw the example drawable on top of the text.
+//        if (mExampleDrawable != null) {
+//            mExampleDrawable.setBounds(paddingLeft, paddingTop,
+//                    paddingLeft + contentWidth, paddingTop + contentHeight);
+//            mExampleDrawable.draw(canvas);
+//        }
     }
 
     /**
@@ -207,5 +215,39 @@ public class MyView extends View {
             }
         }
         return result;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private void testDraw(Canvas canvas){
+        Paint paint = new Paint();
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(Color.GREEN);
+        paint.setDither(true);
+        paint.setAntiAlias(true);
+
+        Rect rect = new Rect(0,0,100,100);
+        canvas.drawRect(rect,paint);
+
+        RectF rectF = new RectF(100,200,300,300);
+        paint.setColor(Color.BLUE);
+        canvas.drawRect(rectF,paint);
+
+        paint.setColor(Color.CYAN);
+        canvas.drawArc(200,200,400,400,30,60,false,paint);
+
+        paint.setColor(Color.YELLOW);
+        canvas.drawArc(500,500,800,800,30,60,true,paint);
+
+        paint.setColor(Color.RED);
+        canvas.drawLine(500,500,700,700,paint);
+
+        paint.setColor(Color.BLUE);
+        canvas.drawCircle(600,600,10,paint);
+
+        Path path = new Path();
+        path.moveTo(600,600);
+        path.lineTo(700,700);
+        path.lineTo(800,800);
+        canvas.drawPath(path,paint);
     }
 }
