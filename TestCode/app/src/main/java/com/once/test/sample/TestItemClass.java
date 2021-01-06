@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import android.app.Activity;
 
+import com.once.test.activity.TestAnimationActivity;
 import com.once.test.activity.TestCustomViewActivity;
 import com.once.test.activity.TestFastJsonActivity;
 import com.once.test.activity.ChatActivity;
@@ -178,6 +179,9 @@ public class TestItemClass {
 
         itemNames.add("CustomView");
         itemClasses.add(TestCustomViewActivity.class);
+
+        itemNames.add("Animation");
+        itemClasses.add(TestAnimationActivity.class);
     }
 
 }

@@ -20,8 +20,11 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".activity.TestCustomViewActivity"
+            android:name=".activity.TestAnimationActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".activity.TestCustomViewActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.TestFastJsonActivity"
             android:theme="@style/AppTheme.NoActionBar" />
