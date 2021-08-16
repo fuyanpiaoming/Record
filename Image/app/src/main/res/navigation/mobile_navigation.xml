@@ -40,4 +40,10 @@
         android:name="com.once.image.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_widget"
+        android:name="com.once.image.ui.widget.WidgetTestFragment"
+        android:label="@string/menu_widget"
+        tools:layout="@layout/fragment_widget" />
 </navigation>
