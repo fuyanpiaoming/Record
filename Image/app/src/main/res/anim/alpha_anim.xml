@@ -1,0 +1,7 @@
+<!--透明度动画 （0，1）（完全透明，完全不透明）-->
+<alpha xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/linear_interpolator"
+    android:fromAlpha="0.2"
+    android:toAlpha="0.8"
+    android:duration="3000">
+</alpha>

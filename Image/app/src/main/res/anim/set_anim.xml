@@ -1,0 +1,33 @@
+<!--组合动画-->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shareInterpolator="true"
+    android:interpolator="@android:anim/linear_interpolator">
+
+    <scale
+        android:duration="3000"
+        android:fromXScale="0.5"
+        android:fromYScale="0.5"
+        android:pivotX="0.5"
+        android:pivotY="0.5"
+        android:toXScale="1.5"
+        android:toYScale="1.5" />
+
+    <translate
+        android:duration="3000"
+        android:fromXDelta="50"
+        android:fromYDelta="100"
+        android:toXDelta="250"
+        android:toYDelta="300" />
+
+    <alpha
+        android:duration="3000"
+        android:fromAlpha="0.2"
+        android:toAlpha="1" />
+
+    <rotate
+        android:fromDegrees="90"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:repeatCount="-1"
+        android:toDegrees="270" />
+</set>

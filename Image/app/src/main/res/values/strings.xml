@@ -13,4 +13,16 @@
     <string name="menu_widget">Widget</string>
 
     <string name="home_second">Home Second</string>
+
+    <!--动画-->
+    <string name="animation_title_frame">逐帧动画</string>
+    <string name="animation_title_tween">补间动画</string>
+    <string name="animation_title_property">属性动画</string>
+
+    <string name="animation_alpha">透明度</string>
+    <string name="animation_scale">缩放</string>
+    <string name="animation_rotate">旋转</string>
+    <string name="animation_translate">平移</string>
+    <string name="animation_set">组合</string>
+
 </resources>

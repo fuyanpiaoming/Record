@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--缩放动画 scaleX,scaleY-->
+<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/linear_interpolator"
+    android:valueFrom="0.5"
+    android:valueTo="1.5"
+    android:duration="2000"
+    android:propertyName="scaleX"
+    android:valueType="floatType"
+    android:repeatMode="restart"
+    android:repeatCount="1">
+
+</objectAnimator>

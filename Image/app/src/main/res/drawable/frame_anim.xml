@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--逐帧动画-->
+<!--
+oneshot=true表示只播放一次,oneshot=false 循环播放
+drawable表示播放的图片
+duration表示时长
+-->
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item
+        android:drawable="@drawable/leave1"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/leave2"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/leave3"
+        android:duration="300" />
+    <item
+        android:drawable="@drawable/leave4"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/leave5"
+        android:duration="100" />
+    <item
+        android:drawable="@drawable/leave6"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/leave7"
+        android:duration="300" />
+    <item
+        android:drawable="@drawable/leave8"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/leave10"
+        android:duration="100" />
+</animation-list>
