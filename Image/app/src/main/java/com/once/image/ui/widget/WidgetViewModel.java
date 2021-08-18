@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.once.image.ui.activity.AnimationTestActivity;
+import com.once.image.ui.activity.AnimatorTestActivity;
 import com.once.image.ui.activity.ConfigTestActivity;
 
 import java.util.ArrayList;
@@ -30,11 +31,13 @@ public class WidgetViewModel extends ViewModel {
 
     void setTestBean() {
         List<TestBean> list = new ArrayList<>();
-        //Animation
+        //Animation(逐帧动画,补间动画,属性动画)
         TestBean testBean = new TestBean();
         testBean.setName("Animation");
         testBean.setClassName(AnimationTestActivity.class);
         list.add(testBean);
+        //Animator(属性动画接口)
+        list.add(new TestBean("Animator", AnimatorTestActivity.class));
         //Config
         list.add(new TestBean("Config", ConfigTestActivity.class));
 
