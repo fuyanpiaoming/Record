@@ -106,6 +106,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/animation_set"/>
+        <Button
+            android:id="@+id/property_anim_set_custom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/animation_set_custom"/>
     </LinearLayout>
 
     <ImageView

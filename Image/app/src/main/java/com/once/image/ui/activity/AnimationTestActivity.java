@@ -32,6 +32,7 @@ public class AnimationTestActivity extends AppCompatActivity {
     private boolean isAnimationRunning = false;
     private Animation animation;
     private int clickTime = 0;
+    private boolean isClicked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,7 @@ public class AnimationTestActivity extends AppCompatActivity {
         findViewById(R.id.property_anim_scale).setOnClickListener(mOnclickListener);
         findViewById(R.id.property_anim_translate).setOnClickListener(mOnclickListener);
         findViewById(R.id.property_anim_set).setOnClickListener(mOnclickListener);
+        findViewById(R.id.property_anim_set_custom).setOnClickListener(mOnclickListener);
 
     }
 
@@ -109,6 +111,9 @@ public class AnimationTestActivity extends AppCompatActivity {
                     break;
                 case R.id.property_anim_set:
                     doPropSetAnim();
+                    break;
+                case R.id.property_anim_set_custom:
+                    doPropAnimCustom();
                     break;
             }
         }
@@ -220,10 +225,9 @@ public class AnimationTestActivity extends AppCompatActivity {
     }
 
     private void doPropScaleAnim(){
-        //从XML文件中加载组合动画
-        AnimatorSet animatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this,R.animator.animator_set);
-        animatorSet.setTarget(mImageView);
-        animatorSet.start();
+        Animator animator = AnimatorInflater.loadAnimator(this,R.animator.scale_animator);
+        animator.setTarget(mImageView);
+        animator.start();
     }
 
     private void doPropRotateAnim(){
@@ -233,11 +237,25 @@ public class AnimationTestActivity extends AppCompatActivity {
     }
 
     private void doPropTranslateAnim(){
-        testObjectAnimator();
+        Animator animator = AnimatorInflater.loadAnimator(this,R.animator.translation_animator);
+        animator.setTarget(mImageView);
+        animator.start();
     }
 
     private void doPropSetAnim(){
-        testValueAnimator();
+        //从XML文件中加载组合动画
+        AnimatorSet animatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(this,R.animator.animator_set);
+        animatorSet.setTarget(mImageView);
+        animatorSet.start();
+    }
+
+    private void doPropAnimCustom(){
+        if (isClicked){
+            testValueAnimator();
+        }else{
+            testObjectAnimator();
+        }
+        isClicked = !isClicked;
     }
 
     private void testValueAnimator(){

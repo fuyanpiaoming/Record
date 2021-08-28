@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 import com.once.image.ui.activity.AnimationTestActivity;
 import com.once.image.ui.activity.AnimatorTestActivity;
 import com.once.image.ui.activity.ConfigTestActivity;
+import com.once.image.ui.activity.MathTestActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,8 @@ public class WidgetViewModel extends ViewModel {
         list.add(new TestBean("Animator", AnimatorTestActivity.class));
         //Config
         list.add(new TestBean("Config", ConfigTestActivity.class));
+        //Math
+        list.add(new TestBean("Math", MathTestActivity.class));
 
         //添加到LiveData
         mTestBean.setValue(list);
