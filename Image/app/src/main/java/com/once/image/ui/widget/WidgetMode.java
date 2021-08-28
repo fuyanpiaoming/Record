@@ -1,14 +1,14 @@
 package com.once.image.ui.widget;
 
-public class TestBean {
+public class WidgetMode {
     private String mName;
     private Class mClassName;
 
-    TestBean(){
+    WidgetMode(){
 
     }
 
-    public TestBean(String name,Class className){
+    WidgetMode(String name, Class className){
         mName = name;
         mClassName = className;
     }

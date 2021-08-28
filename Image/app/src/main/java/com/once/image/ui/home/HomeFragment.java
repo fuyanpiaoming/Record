@@ -11,8 +11,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.once.image.R;
+
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
@@ -23,13 +26,15 @@ public class HomeFragment extends Fragment {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        RecyclerView recyclerView = root.findViewById(R.id.home_recycle_view);
+        homeViewModel.getHomeModeList().observe(getViewLifecycleOwner(), new Observer<List<HomeMode>>() {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void onChanged(List<HomeMode> homeModes) {
+
             }
         });
         return root;
     }
+
+
 }

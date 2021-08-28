@@ -47,9 +47,9 @@ public class WidgetTestFragment extends Fragment {
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
         widgetViewModel.setTestBean();
-        widgetViewModel.getTestBean().observe(getViewLifecycleOwner(), new Observer<List<TestBean>>() {
+        widgetViewModel.getTestBean().observe(getViewLifecycleOwner(), new Observer<List<WidgetMode>>() {
             @Override
-            public void onChanged(List<TestBean> testBeans) {
+            public void onChanged(List<WidgetMode> testBeans) {
                 //update ui
                 myAdapter.setTestBeans(testBeans);
                 myAdapter.notifyDataSetChanged();
@@ -62,7 +62,7 @@ public class WidgetTestFragment extends Fragment {
 
     private static class MyAdapter extends RecyclerView.Adapter<MyAdapter.VH> {
 
-        private List<TestBean> mTestBeans;
+        private List<WidgetMode> mTestBeans;
         private Context mContext;
 
         static class VH extends RecyclerView.ViewHolder {
@@ -79,7 +79,7 @@ public class WidgetTestFragment extends Fragment {
             mTestBeans = new ArrayList<>();
         }
 
-        void setTestBeans(List<TestBean> testBeans) {
+        void setTestBeans(List<WidgetMode> testBeans) {
             mTestBeans.clear();
             mTestBeans.addAll(testBeans);
         }

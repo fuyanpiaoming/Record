@@ -15,7 +15,7 @@ import java.util.List;
 public class WidgetViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
-    private MutableLiveData<List<TestBean>> mTestBean;
+    private MutableLiveData<List<WidgetMode>> mTestBean;
 
     public WidgetViewModel() {
         mText = new MutableLiveData<>();
@@ -31,24 +31,24 @@ public class WidgetViewModel extends ViewModel {
     }
 
     void setTestBean() {
-        List<TestBean> list = new ArrayList<>();
+        List<WidgetMode> list = new ArrayList<>();
         //Animation(逐帧动画,补间动画,属性动画)
-        TestBean testBean = new TestBean();
+        WidgetMode testBean = new WidgetMode();
         testBean.setName("Animation");
         testBean.setClassName(AnimationTestActivity.class);
         list.add(testBean);
         //Animator(属性动画接口)
-        list.add(new TestBean("Animator", AnimatorTestActivity.class));
+        list.add(new WidgetMode("Animator", AnimatorTestActivity.class));
         //Config
-        list.add(new TestBean("Config", ConfigTestActivity.class));
+        list.add(new WidgetMode("Config", ConfigTestActivity.class));
         //Math
-        list.add(new TestBean("Math", MathTestActivity.class));
+        list.add(new WidgetMode("Math", MathTestActivity.class));
 
         //添加到LiveData
         mTestBean.setValue(list);
     }
 
-    LiveData<List<TestBean>> getTestBean() {
+    LiveData<List<WidgetMode>> getTestBean() {
         return mTestBean;
     }
 

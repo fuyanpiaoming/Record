@@ -9,8 +9,8 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_widget">Widget</string>
+    <string name="menu_slideshow">System</string>
+    <string name="menu_widget">UI</string>
 
     <string name="home_second">Home Second</string>
 
