@@ -25,4 +25,9 @@
     <string name="animation_translate">平移</string>
     <string name="animation_set">组合</string>
     <string name="animation_set_custom">自定义</string>
+    <string name="sensor_type">传感器类型</string>
+    <string name="sensor_accelerometer">加速度传感器</string>
+    <string name="sensor_gravity">重力传感器</string>
+    <string name="sensor_light">光传感器</string>
+    <string name="sensor_proximity">距离传感器</string>
 </resources>

@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModel;
 
 import com.once.image.MainActivity;
 import com.once.image.R;
+import com.once.image.ui.activity.AmsActivity;
+import com.once.image.ui.activity.SensorActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +31,7 @@ public class SlideshowViewModel extends ViewModel {
         mSlideModes = new MutableLiveData<>();
         List<SlideMode> slideModes = new ArrayList<>();
         slideModes.add(new SlideMode("PowerManager", MainActivity.class, R.drawable.leave1));
-        slideModes.add(new SlideMode("ActivityManager", MainActivity.class, R.drawable.leave2));
+        slideModes.add(new SlideMode("ActivityManager", AmsActivity.class, R.drawable.leave2));
         slideModes.add(new SlideMode("PackageManager", MainActivity.class, R.drawable.leave3));
         slideModes.add(new SlideMode("NotificationManager", MainActivity.class, R.drawable.leave4));
         slideModes.add(new SlideMode("AlarmManager", MainActivity.class, R.drawable.leave5));
@@ -43,7 +45,7 @@ public class SlideshowViewModel extends ViewModel {
         slideModes.add(new SlideMode("WallpaperManager", MainActivity.class, R.drawable.leave13));
         slideModes.add(new SlideMode("AppWidgetManager", MainActivity.class, R.drawable.leave14));
         slideModes.add(new SlideMode("AudioManager", MainActivity.class, R.drawable.leave15));
-        slideModes.add(new SlideMode("SensorManager", MainActivity.class, R.drawable.leave16));
+        slideModes.add(new SlideMode("SensorManager", SensorActivity.class, R.drawable.leave16));
         slideModes.add(new SlideMode("StatusBarManager", MainActivity.class, R.drawable.leave17));
         slideModes.add(new SlideMode("AccessibilityManager", MainActivity.class, R.drawable.leave18));
         slideModes.add(new SlideMode("SearchManager", MainActivity.class, R.drawable.leave19));
