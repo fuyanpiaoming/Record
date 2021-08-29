@@ -29,15 +29,6 @@ public class WidgetTestFragment extends Fragment {
 
         WidgetViewModel widgetViewModel = ViewModelProviders.of(this).get(WidgetViewModel.class);
         View root = inflater.inflate(R.layout.fragment_widget, container, false);
-        final TextView textView = root.findViewById(R.id.tv_widget);
-        widgetViewModel.setText("Widget!!!");
-        widgetViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(String s) {
-                //update ui
-                textView.setText(s);
-            }
-        });
 
         final RecyclerView recyclerView = root.findViewById(R.id.widget_recycle);
         final MyAdapter myAdapter = new MyAdapter(getContext());
@@ -49,9 +40,9 @@ public class WidgetTestFragment extends Fragment {
         widgetViewModel.setTestBean();
         widgetViewModel.getTestBean().observe(getViewLifecycleOwner(), new Observer<List<WidgetMode>>() {
             @Override
-            public void onChanged(List<WidgetMode> testBeans) {
+            public void onChanged(List<WidgetMode> widgetModes) {
                 //update ui
-                myAdapter.setTestBeans(testBeans);
+                myAdapter.setWidgetModes(widgetModes);
                 myAdapter.notifyDataSetChanged();
             }
         });
@@ -62,7 +53,7 @@ public class WidgetTestFragment extends Fragment {
 
     private static class MyAdapter extends RecyclerView.Adapter<MyAdapter.VH> {
 
-        private List<WidgetMode> mTestBeans;
+        private List<WidgetMode> mWidgetModes;
         private Context mContext;
 
         static class VH extends RecyclerView.ViewHolder {
@@ -76,28 +67,28 @@ public class WidgetTestFragment extends Fragment {
 
         MyAdapter(Context context) {
             mContext = context;
-            mTestBeans = new ArrayList<>();
+            mWidgetModes = new ArrayList<>();
         }
 
-        void setTestBeans(List<WidgetMode> testBeans) {
-            mTestBeans.clear();
-            mTestBeans.addAll(testBeans);
+        void setWidgetModes(List<WidgetMode> widgetModes) {
+            mWidgetModes.clear();
+            mWidgetModes.addAll(widgetModes);
         }
 
         @NonNull
         @Override
         public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.test_item, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.widget_item, parent, false);
             return new VH(view);
         }
 
         @Override
         public void onBindViewHolder(@NonNull VH holder, final int position) {
-            holder.textView.setText(mTestBeans.get(position).getName());
+            holder.textView.setText(mWidgetModes.get(position).getName());
             holder.textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(mContext, mTestBeans.get(position).getClassName());
+                    Intent intent = new Intent(mContext, mWidgetModes.get(position).getClassName());
                     mContext.startActivity(intent);
                 }
             });
@@ -105,7 +96,7 @@ public class WidgetTestFragment extends Fragment {
 
         @Override
         public int getItemCount() {
-            return mTestBeans.size();
+            return mWidgetModes.size();
         }
     }
 
