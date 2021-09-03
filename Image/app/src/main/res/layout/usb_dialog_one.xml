@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/usb_bg">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="USB的用途"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/usb_dialog_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp">
+
+        <RadioButton
+            android:id="@+id/usb_dialog_rb_mtp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layoutDirection="rtl"
+            android:textSize="16sp"
+            android:text="MTP" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#D8D8D8" />
+
+        <RadioButton
+            android:id="@+id/usb_dialog_rb_ptp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layoutDirection="rtl"
+            android:textSize="16sp"
+            android:text="PTP" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#D8D8D8" />
+
+        <RadioButton
+            android:id="@+id/usb_dialog_rb_midi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layoutDirection="rtl"
+            android:text="MIDI" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/usb_dialog_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:text="更多"
+        android:textColor="#3478F6" />
+
+</LinearLayout>

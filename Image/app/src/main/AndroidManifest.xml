@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.once.image">
 
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
@@ -11,16 +12,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.activity.AlertDialogTestActivity" />
+        <activity android:name=".ui.activity.JsonAnimatorActivity" />
+
         <service
             android:name=".service.MyWallPaperService"
             android:enabled="true"
             android:exported="false">
             <intent-filter>
-                <action android:name="android.service.wallpaper.WallpaperService"/>
+                <action android:name="android.service.wallpaper.WallpaperService" />
             </intent-filter>
+
             <meta-data
                 android:name="android.service.wallpaper"
-                android:resource="@xml/live_wallpaper"/>
+                android:resource="@xml/live_wallpaper" />
         </service>
 
         <activity android:name=".ui.activity.AmsActivity" />

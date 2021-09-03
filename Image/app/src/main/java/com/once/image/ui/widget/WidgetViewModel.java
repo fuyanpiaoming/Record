@@ -4,9 +4,11 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.once.image.ui.activity.AlertDialogTestActivity;
 import com.once.image.ui.activity.AnimationTestActivity;
 import com.once.image.ui.activity.AnimatorTestActivity;
 import com.once.image.ui.activity.ConfigTestActivity;
+import com.once.image.ui.activity.JsonAnimatorActivity;
 import com.once.image.ui.activity.MathTestActivity;
 
 import java.util.ArrayList;
@@ -43,6 +45,10 @@ public class WidgetViewModel extends ViewModel {
         list.add(new WidgetMode("Config", ConfigTestActivity.class));
         //Math
         list.add(new WidgetMode("Math", MathTestActivity.class));
+        //json动画
+        list.add(new WidgetMode("JsonAnim", JsonAnimatorActivity.class));
+        //AlertDialog
+        list.add(new WidgetMode("AlertDialog", AlertDialogTestActivity.class));
 
         //添加到LiveData
         mTestBean.setValue(list);

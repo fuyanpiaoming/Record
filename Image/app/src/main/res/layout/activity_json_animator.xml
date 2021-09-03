@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFEB3B"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center"
+    tools:context=".ui.activity.JsonAnimatorActivity">
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/json_lottie_view1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:lottie_autoPlay="false"
+        app:lottie_imageAssetsFolder="images/"
+        app:lottie_fileName="airplane.json"
+        app:lottie_loop="true"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/json_lottie_view2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:lottie_autoPlay="false"
+        app:lottie_imageAssetsFolder="images/"
+        app:lottie_fileName="bluetooth.json"
+        app:lottie_loop="true"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/json_lottie_view3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:lottie_autoPlay="false"
+        app:lottie_imageAssetsFolder="images/"
+        app:lottie_fileName="dnd.json"
+        app:lottie_loop="true"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/json_lottie_view4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:lottie_autoPlay="false"
+        app:lottie_imageAssetsFolder="images/"
+        app:lottie_fileName="flashlight.json"
+        app:lottie_loop="true"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/json_lottie_view5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:lottie_autoPlay="false"
+        app:lottie_imageAssetsFolder="images/"
+        app:lottie_fileName="location.json"
+        app:lottie_loop="true"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/json_lottie_view6"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:lottie_autoPlay="false"
+        app:lottie_imageAssetsFolder="images/"
+        app:lottie_fileName="orientation.json"
+        app:lottie_loop="true"/>
+</LinearLayout>
