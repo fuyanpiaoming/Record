@@ -15,7 +15,7 @@
         android:layout_height="50dp"
         app:lottie_autoPlay="false"
         app:lottie_imageAssetsFolder="images/"
-        app:lottie_fileName="airplane.json"
+        app:lottie_fileName="data.json"
         app:lottie_loop="true"/>
 
     <com.airbnb.lottie.LottieAnimationView
