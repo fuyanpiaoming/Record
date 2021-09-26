@@ -8,6 +8,7 @@ import com.once.image.MainActivity;
 import com.once.image.R;
 import com.once.image.ui.activity.AmsActivity;
 import com.once.image.ui.activity.SensorActivity;
+import com.once.image.ui.activity.TelephonyManActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +39,7 @@ public class SlideshowViewModel extends ViewModel {
         slideModes.add(new SlideMode("LocationManager", MainActivity.class, R.drawable.leave6));
         slideModes.add(new SlideMode("WindowManager", MainActivity.class, R.drawable.leave7));
         slideModes.add(new SlideMode("InputMethodManager", MainActivity.class, R.drawable.leave8));
-        slideModes.add(new SlideMode("TelephonyManager", MainActivity.class, R.drawable.leave9));
+        slideModes.add(new SlideMode("TelephonyManager", TelephonyManActivity.class, R.drawable.leave9));
         slideModes.add(new SlideMode("AccountManager", MainActivity.class, R.drawable.leave10));
         slideModes.add(new SlideMode("ClipboardManager", MainActivity.class, R.drawable.leave11));
         slideModes.add(new SlideMode("ConnectivityManager", MainActivity.class, R.drawable.leave12));

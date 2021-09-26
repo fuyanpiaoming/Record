@@ -112,12 +112,21 @@ public class SensorActivity extends AppCompatActivity {
         }
     };
 
-    private void showValue(TextView tv,String title,float[] values){
-        String stringBuilder = title + ":" + "\n" +
-                "x=" + values[0] + "," +
-                "y=" + values[1] + "," +
-                "z=" + values[2] + "\n";
-        tv.setText(stringBuilder);
+    private void showValue(TextView tv, String title, float[] values) {
+        String strValue = "";
+        if (values.length == 3) {
+            strValue = title + ":" + "\n" +
+                    "x=" + values[0] + "," +
+                    "y=" + values[1] + "," +
+                    "z=" + values[2] + "\n";
+        } else if (values.length == 2) {
+            strValue = title + ":" + "\n" +
+                    "x=" + values[0] + "," +
+                    "y=" + values[1] + "\n";
+        } else if (values.length == 1) {
+            strValue = title + ":" + "\n" +
+                    "x=" + values[0] + "\n";
+        }
+        tv.setText(strValue);
     }
-
 }
