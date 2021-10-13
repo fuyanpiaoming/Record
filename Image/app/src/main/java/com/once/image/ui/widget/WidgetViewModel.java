@@ -10,6 +10,7 @@ import com.once.image.ui.activity.AnimatorTestActivity;
 import com.once.image.ui.activity.ConfigTestActivity;
 import com.once.image.ui.activity.JsonAnimatorActivity;
 import com.once.image.ui.activity.MathTestActivity;
+import com.once.image.ui.activity.TestTouchActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +50,8 @@ public class WidgetViewModel extends ViewModel {
         list.add(new WidgetMode("JsonAnim", JsonAnimatorActivity.class));
         //AlertDialog
         list.add(new WidgetMode("AlertDialog", AlertDialogTestActivity.class));
+        //Touch事件分发流程
+        list.add(new WidgetMode("TouchEventDispatch", TestTouchActivity.class));
 
         //添加到LiveData
         mTestBean.setValue(list);

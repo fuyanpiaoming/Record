@@ -30,4 +30,8 @@
     <string name="sensor_gravity">重力传感器</string>
     <string name="sensor_light">光传感器</string>
     <string name="sensor_proximity">距离传感器</string>
+
+    <string name="title_activity_test_widget">TestWidgetActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

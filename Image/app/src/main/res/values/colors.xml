@@ -6,4 +6,6 @@
     <color name="colorWhite">#ffffff</color>
     <color name="colorHalfWhite">#77ffffff</color>
     <color name="colorBlue">#2125F3</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

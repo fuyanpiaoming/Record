@@ -5,11 +5,13 @@ package com.once.image.ui.activity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -50,6 +52,7 @@ public class AlertDialogTestActivity extends Activity {
                     showAlertDialog2();
                     break;
                 case R.id.alert_btn3:
+                    showAlertDialog3();
                     break;
                 case R.id.alert_btn4:
                     break;
@@ -150,5 +153,38 @@ public class AlertDialogTestActivity extends Activity {
         //lp.format = PixelFormat.TRANSLUCENT;
         lp.dimAmount = 0.2f;
         window.setAttributes(lp);
+    }
+
+    private void showAlertDialog3(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Title");
+        builder.setMessage("Message");
+        builder.setOnKeyListener(new DialogInterface.OnKeyListener() {
+            @Override
+            public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_BACK){
+                    Toast.makeText(AlertDialogTestActivity.this,"click back",Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+                return false;
+            }
+        });
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(AlertDialogTestActivity.this,"click yes",Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(AlertDialogTestActivity.this,"click no",Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setIcon(R.drawable.leave1);
+        builder.setCancelable(false);
+        AlertDialog alertDialog = builder.create();
+        alertDialog.setCanceledOnTouchOutside(true);
+        alertDialog.show();
     }
 }
