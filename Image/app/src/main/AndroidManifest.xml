@@ -16,11 +16,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.activity.TestNotificationActivity"></activity>
+        <activity android:name=".ui.activity.TestOutlineActivity" />
         <activity
             android:name=".ui.activity.TestTouchActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_test_widget"
-            android:theme="@style/FullscreenTheme"></activity>
+            android:theme="@style/FullscreenTheme" />
         <activity android:name=".ui.activity.TelephonyManActivity" />
         <activity android:name=".ui.activity.AlertDialogTestActivity" />
         <activity android:name=".ui.activity.JsonAnimatorActivity" />
